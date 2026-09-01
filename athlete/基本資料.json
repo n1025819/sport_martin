@@ -1,13 +1,15 @@
 {
   "profile_type": "athlete_basic_profile",
-  "updated_at": "2026-04-25",
+  "updated_at": "2026-09-01",
   "personal": {
     "birth_date": "1994-07-28",
     "age_as_of_2026_04_25": 31,
     "height_cm": 173
   },
   "equipment": {
-    "road_bike": "Pinarello Paris Asym System T600"
+    "road_bike": "Pinarello Paris Asym System T600",
+    "wearable": "Garmin tactix 7 Pro",
+    "bike_computer": "Garmin Edge 1050"
   },
   "body_metrics": {
     "latest_weight_kg": 80.0,

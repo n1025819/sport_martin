@@ -5,7 +5,7 @@
 <meta http-equiv="refresh" content="0; url=linkTreeIndex.html">
 <script>location.replace('linkTreeIndex.html')</script>
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>STEVE.CHUANG // LAB</title>
+<title>MARTIN // LAB</title>
 
 <!-- ==== external libraries (CDN) ==== -->
 <script src="https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.min.js"></script>
@@ -254,9 +254,9 @@ html,body{
 .link-title{font-size:13px;font-weight:600;letter-spacing:.3px}
 .link-meta{font-size:9px;color:rgba(255,255,255,.5);margin-top:2px;letter-spacing:1px;font-family:monospace;text-transform:uppercase}
 .link-no{font-size:9px;font-family:monospace;color:rgba(255,255,255,.3);letter-spacing:1.5px}
-.link-tile.steve-vip{border-color:rgba(255,140,50,.5)!important;background:linear-gradient(135deg,rgba(255,140,50,.12),rgba(255,80,0,.05))}
-.link-tile.steve-vip::before{
-  content:'STEVE';position:absolute;top:6px;right:8px;
+.link-tile.martin-vip{border-color:rgba(255,140,50,.5)!important;background:linear-gradient(135deg,rgba(255,140,50,.12),rgba(255,80,0,.05))}
+.link-tile.martin-vip::before{
+  content:'MARTIN';position:absolute;top:6px;right:8px;
   font-size:7px;letter-spacing:2px;font-weight:700;
   color:#1a0800;background:linear-gradient(90deg,#ff8c28,#ffea00);
   padding:1.5px 5px;border-radius:8px;
@@ -406,12 +406,12 @@ html,body{
 
 <!-- top marquee -->
 <div class="marquee top">
-  <span class="marquee-track">★ STEVE.CHUANG.LAB ★ FULL-STACK DEVELOPER ★ CYCLIST ★ BUILDER ★ EXPERIMENTAL UI/UX ★ CHAOS BY DESIGN ★ NO RULES ★ ALL EFFECTS ★ MAX OVERDRIVE ★ &nbsp;&nbsp;</span>
+  <span class="marquee-track">★ MARTIN.LAB ★ FULL-STACK DEVELOPER ★ CYCLIST ★ BUILDER ★ EXPERIMENTAL UI/UX ★ CHAOS BY DESIGN ★ NO RULES ★ ALL EFFECTS ★ MAX OVERDRIVE ★ &nbsp;&nbsp;</span>
 </div>
 
 <!-- title -->
 <div class="title-wrap">
-  <h1 class="glitch" data-txt="STEVE CHUANG">STEVE CHUANG</h1>
+  <h1 class="glitch" data-txt="MARTIN">MARTIN</h1>
   <div class="tagline">// FULL-STACK · CYCLIST · BUILDER //</div>
   <div class="subline-wrap"><span id="typed"></span></div>
   <div class="tele-strip">
@@ -607,7 +607,7 @@ const LINKS=[
     icon:'M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z'},
   {label:'Strava',meta:'OFFICIAL',url:'https://www.strava.com/athletes/161539959',ac:'#fc4c02',
     icon:'M15.387 17.944l-2.089-4.116h-3.065L15.387 24l5.15-10.172h-3.066m-7.008-5.599l2.836 5.598h4.172L10.463 0l-7 13.828h4.169'},
-  {label:'Strava VIP',meta:'STEVE BUILD',url:'strava.html',ac:'#ff8c32',vip:true,
+  {label:'Strava VIP',meta:'MARTIN BUILD',url:'strava.html',ac:'#ff8c32',vip:true,
     icon:'M15.387 17.944l-2.089-4.116h-3.065L15.387 24l5.15-10.172h-3.066m-7.008-5.599l2.836 5.598h4.172L10.463 0l-7 13.828h4.169'},
   {label:'Resume',meta:'CV PAGE',url:'linkTreeIndex.html#cv',ac:'#2ecfa0',
     icon:'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM6 20V4h5v7h7v9H6z'},
@@ -619,7 +619,7 @@ const LINKS=[
 function renderLinks(){
   const wrap=document.getElementById('link-grid')
   wrap.innerHTML=LINKS.map((l,i)=>`
-    <a class="link-tile${l.vip?' steve-vip':''}" href="${l.url}" target="_blank" style="--ac:${l.ac}">
+    <a class="link-tile${l.vip?' martin-vip':''}" href="${l.url}" target="_blank" style="--ac:${l.ac}">
       <div class="link-icon-wrap"><svg viewBox="0 0 24 24"><path d="${l.icon}"/></svg></div>
       <div class="link-info"><div class="link-title">${l.label}</div><div class="link-meta">${l.meta}</div></div>
       <div class="link-no">${String(i+1).padStart(2,'0')}</div>
@@ -697,7 +697,7 @@ function startTerm(){
     '<span class="ok">[OK]</span> rendering 10 modules',
     '<span class="warn">[WARN]</span> sanity check: SKIPPED',
     '<span class="ok">[OK]</span> ready in <span class="warn">2400ms</span>',
-    '<span class="pmt">steve@lab</span>:~$ <span style="opacity:.6">_</span>',
+    '<span class="pmt">martin@lab</span>:~$ <span style="opacity:.6">_</span>',
   ]
   let i=0
   function next(){

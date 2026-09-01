@@ -1,6 +1,6 @@
 {
   "context_type": "gpt_coach_primer",
-  "generated_at": "2026-04-25",
+  "generated_at": "2026-09-01",
   "source_folder": "athlete",
   "basic_profile": {
     "birth_date": "1994-07-28",
@@ -17,6 +17,7 @@
   },
   "source_files": [
     "基本資料.json",
+    "路段目標.json",
     "跑步能力資料.json",
     "游泳能力資料.json",
     "HRV狀態.csv",
@@ -89,6 +90,30 @@
       "latest_month": "2026-04",
       "peak": 54.4,
       "peak_month": "2025-09"
+    },
+    "verified_segment_goal": {
+      "name": "中社路 full climb",
+      "strava_segment_id": 1761462,
+      "distance_km": 3.94,
+      "elevation_gain_m": 245,
+      "average_grade_pct": 6.3,
+      "personal_record": {
+        "elapsed_seconds": 1008,
+        "elapsed_time": "16:48",
+        "date": "2025-12-16"
+      },
+      "latest_verified_attempt": {
+        "elapsed_seconds": 1203,
+        "elapsed_time": "20:03",
+        "date": "2026-08-12",
+        "average_speed_kmh": 11.8,
+        "average_heart_rate_bpm": 137,
+        "average_power_watts": 227
+      },
+      "target_time": "16:00",
+      "seconds_to_improve_from_pr": 48,
+      "source": "user_verified_strava_screenshot",
+      "data_warning": "Do not use legacy 16:25 or 268W values; they are not verified as Martin data."
     },
     "peak_power_watts": {
       "1s": 982,

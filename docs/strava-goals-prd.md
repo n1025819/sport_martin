@@ -75,7 +75,7 @@
 ## 5. Target User
 
 ### Primary User
-- 專案本人（Steve）
+- 專案本人（Martin）
 - 有持續三鐵 / 多項運動訓練需求的使用者
 - 希望透過 dashboard 快速掌握本月 / 本週訓練狀態的人
 

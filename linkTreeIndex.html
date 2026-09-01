@@ -326,7 +326,7 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sa
       </div>
       <div class="sub-body">
         <div class="cv-hero">
-          <div class="cv-avatar">SC</div>
+          <div class="cv-avatar">MC</div>
           <div class="cv-hero-info">
             <h1>Martin Chang</h1>
             <p>Full-Stack Developer · Cyclist · Side-project Enthusiast</p>
@@ -428,13 +428,13 @@ createApp({
     /* ── CV data ── */
     const experience = [
       { title:'Full-Stack Developer', company:'— (請填入公司名稱)', date:'20XX – Present', color:'#7F77DD', desc:'負責前後端開發與維護，參與系統架構設計，導入 CI/CD 流程提升部署效率。', tags:['Node.js','Vue','Express','MySQL','AWS'] },
-      { title:'Side Project — SteveChuangCard', company:'個人專案', date:'2020', color:'#2AABEE', desc:'Node.js + Express + Vue 個人履歷網站，整合 NBA 爬蟲（puppeteer + cheerio）、即時聊天室（socket.io）。', tags:['Node.js','Vue','Express','Socket.io','Puppeteer','Webpack'] },
+      { title:'Side Project — Sport Martin', company:'個人專案', date:'2026', color:'#2AABEE', desc:'整合 Garmin Connect 訓練資料、GitHub Actions 自動同步與個人運動儀表板。', tags:['Python','JavaScript','Garmin Connect','GitHub Actions'] },
       { title:'Side Project — LinkTree', company:'個人專案', date:'2020', color:'#1D9E75', desc:'GitHub Pages 靜態部署，後升級為太空主題動畫版本 + Vue 3 SPA。', tags:['HTML','CSS','Vue 3','Canvas','GitHub Pages'] },
     ]
     const projects = [
-      { title:'NBA Dashboard', url:'https://github.com/chenhan20/SteveChuangCard', desc:'爬取 NBA 即時比分、BOX SCORE，Vue.js 呈現，支援日期切換。', stack:['Node.js','Puppeteer','Vue','Cheerio'] },
-      { title:'Live Chat Room', url:'https://github.com/chenhan20/SteveChuangCard', desc:'Socket.io 雙向即時聊天，實作房間、廣播、上線通知。', stack:['Socket.io','Express','Node.js'] },
-      { title:'Space LinkTree', url:'https://chenhan20.github.io/linkTree/linkTreeIndex.html', desc:'太空主題 linktree + Strava 儀表板，Vue 3 SPA 三頁架構。', stack:['Vue 3','CSS Animation','Canvas','Strava API'] },
+      { title:'Sport Martin', url:'https://github.com/n1025819/sport_martin', desc:'Garmin Connect 自動同步與個人多運動訓練儀表板。', stack:['Python','JavaScript','GitHub Actions','Garmin Connect'] },
+      { title:'HALO Sports Dashboard', url:'https://n1025819.github.io/sport_martin/strava_halo.html', desc:'呈現單車、跑步、游泳、肌力與 HYROX 訓練紀錄。', stack:['HTML','CSS','JavaScript','GitHub Pages'] },
+      { title:'MotionWorld', url:'motionworld/index.html', desc:'將個人運動紀錄轉成互動式地圖與訓練世界。', stack:['JavaScript','Canvas','Garmin Data'] },
     ]
     const skills = [
       { name:'JavaScript', pct:85, color:'linear-gradient(90deg,#7F77DD,#5DCAA5)' },
