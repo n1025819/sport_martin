@@ -6,6 +6,9 @@
     "age_as_of_2026_04_25": 31,
     "height_cm": 173
   },
+  "equipment": {
+    "road_bike": "Pinarello Paris Asym System T600"
+  },
   "body_metrics": {
     "latest_weight_kg": 80.0,
     "latest_bmi": 26.7,
