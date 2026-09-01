@@ -2,6 +2,7 @@
 
 import getpass
 import os
+import subprocess
 import sys
 import tempfile
 from pathlib import Path
@@ -49,6 +50,17 @@ def main():
     print("請在 GitHub Repository secret 建立 GARMIN_TOKEN_KEY，值如下：")
     print(key)
     print("\n請勿將上面的 key 貼到聊天、README 或公開程式碼。")
+
+    print("\n正在執行第一次完整同步，請稍候…")
+    sync_env = os.environ.copy()
+    sync_env["GARMIN_TOKEN_KEY"] = key
+    subprocess.run(
+        [sys.executable, str(ROOT / "scripts" / "garmin_sync.py"), "--fetch-all"],
+        cwd=ROOT,
+        env=sync_env,
+        check=True,
+    )
+    print("首次同步完成。重新整理 strava_halo.html 即可看到 Garmin 活動。")
 
 
 if __name__ == "__main__":

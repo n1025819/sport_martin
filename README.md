@@ -21,6 +21,7 @@ py -3.12 -m venv .venv-garmin
 .\.venv-garmin\Scripts\python -m pip install -r requirements-garmin.txt
 
 # 3. 互動登入 Garmin；若有 MFA，依提示輸入驗證碼
+#    登入成功後會自動執行第一次完整同步並更新 data/strava.json
 .\.venv-garmin\Scripts\python scripts\garmin_login.py
 ```
 

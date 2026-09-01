@@ -173,7 +173,7 @@ html,body{
 .hero::before{top:7px;left:7px;border-right:none;border-bottom:none}
 .hero::after{bottom:7px;right:7px;border-left:none;border-top:none}
 .avatar{
-  width:110px;height:110px;flex-shrink:0;position:relative;
+  width:80px;height:80px;flex-shrink:0;position:relative;
   background:linear-gradient(135deg,#1a1410,#3a2a08);
   border:2px solid var(--gold-2);
   overflow:hidden;
@@ -183,7 +183,7 @@ html,body{
     0 0 0 4px rgba(0,0,0,.55),
     0 0 0 5px rgba(255,199,36,.25);
   display:flex;align-items:center;justify-content:center;
-  clip-path:polygon(18px 0,calc(100% - 18px) 0,100% 18px,100% calc(100% - 18px),calc(100% - 18px) 100%,18px 100%,0 calc(100% - 18px),0 18px);
+  clip-path:polygon(13px 0,calc(100% - 13px) 0,100% 13px,100% calc(100% - 13px),calc(100% - 13px) 100%,13px 100%,0 calc(100% - 13px),0 13px);
 }
 .avatar img{width:100%;height:100%;object-fit:cover}
 .avatar svg{width:52px;height:52px;fill:var(--gold-2)}
@@ -558,7 +558,7 @@ html,body{
 }
 @media(max-width:420px){
   .topbar-title{letter-spacing:1.8px;font-size:10px}
-  .avatar{width:90px;height:90px}
+  .avatar{width:68px;height:68px}
   .hero{gap:1rem;padding:1.1rem 1rem}
   .activity-card{align-items:flex-start;gap:9px;padding:.75rem .85rem;margin-left:0}
   .activity-icon{width:38px;height:38px}
@@ -675,7 +675,7 @@ html,body{
 .pm-dial-val{font-size:44px;line-height:1;font-weight:800;color:var(--gold-1);text-shadow:0 0 16px rgba(255,199,36,.7);font-variant-numeric:tabular-nums;font-family:'Orbitron',sans-serif}
 .pm-dial-unit{font-size:11px;color:var(--gold-3);margin-top:3px;letter-spacing:2px;font-weight:600}
 .pm-act-card{position:relative;padding:12px 14px;border:1px solid var(--plate-edge);background:linear-gradient(135deg,rgba(255,199,36,.08),rgba(0,0,0,.4));font-size:12px;color:var(--ink);clip-path:polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px);overflow:hidden}
-.pm-act-avatar{position:absolute;right:0;bottom:0;width:110px;height:110px;object-fit:cover;opacity:.22;filter:grayscale(20%) contrast(1.2) brightness(1.1);pointer-events:none;border-radius:50%;transform:rotate(-6deg) translateX(20%) translateY(18%);mask-image:radial-gradient(circle at 40% 40%,#000 40%,transparent 72%);-webkit-mask-image:radial-gradient(circle at 40% 40%,#000 40%,transparent 72%)}
+.pm-act-avatar{position:absolute;right:0;bottom:0;width:84px;height:84px;object-fit:cover;opacity:.22;filter:grayscale(20%) contrast(1.2) brightness(1.1);pointer-events:none;border-radius:50%;transform:rotate(-6deg) translateX(20%) translateY(18%);mask-image:radial-gradient(circle at 40% 40%,#000 40%,transparent 72%);-webkit-mask-image:radial-gradient(circle at 40% 40%,#000 40%,transparent 72%)}
 .pm-act-card .pmc-tag{display:inline-flex;align-items:center;gap:5px;font-size:9px;color:var(--gold-1);letter-spacing:2px;margin-bottom:8px;padding:2px 7px;border:1px solid var(--gold-2);clip-path:polygon(3px 0,100% 0,100% calc(100% - 3px),calc(100% - 3px) 100%,0 100%,0 3px)}
 .pm-act-card .pmc-row{display:flex;align-items:center;gap:7px;margin:3px 0;font-size:12px}
 .pm-act-card .pmc-row .pmc-ico{width:14px;color:var(--gold-3);flex-shrink:0;text-align:center}
@@ -777,13 +777,13 @@ const STATUS_META = {
   done:    { emoji: '🟢', text: '達標' },
   over:    { emoji: '🔥', text: '超標' },
 }
-function renderMonthlySummary(ms) {
+function renderMonthlySummary(ms, periodLabel = '本月') {
   if (!ms) return ''
   const m = (v, u) => `<div class="stat-metric"><div class="stat-val">${v}</div><div class="stat-unit">${u}</div></div>`
   const div = '<div class="stat-vdiv"></div>'
   const hr = v => v != null ? v : '—'
   return `
-    <div class="section-title">本月訓練量 <span class="muted">· MONTHLY SUMMARY</span></div>
+    <div class="section-title">${periodLabel}訓練量 <span class="muted">· MONTHLY SUMMARY</span></div>
     <div class="stats-grid">
       <div class="stat-card"><div class="stat-label">🚴 單車</div><div class="stat-metrics">${m((+(ms.ride_km??0)).toFixed(1),'km')}${div}${m(hr(ms.ride_hr),'hr')}</div></div>
       <div class="stat-card"><div class="stat-label">🏃 跑步</div><div class="stat-metrics">${m((+(ms.run_km??0)).toFixed(1),'km')}${div}${m(hr(ms.run_hr),'hr')}</div></div>
@@ -791,7 +791,7 @@ function renderMonthlySummary(ms) {
       <div class="stat-card"><div class="stat-label">🏋️ 重訓</div><div class="stat-metrics">${m(ms.weight_count??0,'次')}${div}${m(hr(ms.weight_hr),'hr')}</div></div>
     </div>`
 }
-function renderMonthlyGoals(mg) {
+function renderMonthlyGoals(mg, periodLabel = '本月') {
   if (!mg) return ''
   const order = ['ride','run','swim','weight']
   const rows = order.map(k => {
@@ -808,7 +808,7 @@ function renderMonthlyGoals(mg) {
       </div>`
   }).join('')
   return `
-    <div class="section-title">月度紀律 <span class="muted">· MONTHLY CONSISTENCY</span></div>
+    <div class="section-title">${periodLabel}紀律 <span class="muted">· MONTHLY CONSISTENCY</span></div>
     <div class="consistency-list">${rows}</div>`
 }
 const TRAIN_PART_IMAGE_MAP = {
@@ -843,7 +843,7 @@ function renderTrainPartIcons(parts) {
   if (!matched.length) return ''
   return `<div style="margin-top:8px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;">${matched.map(k => `<img src="${TRAIN_PART_IMAGE_MAP[k]}" alt="${k}" title="${k}" style="width:42px;height:42px;object-fit:contain;padding:4px;border-radius:10px;background:rgba(255,255,255,.09);border:1px solid rgba(255,199,36,.45);box-shadow:0 0 0 1px rgba(255,255,255,.04) inset,0 4px 10px rgba(0,0,0,.25);">`).join('')}</div>`
 }
-function renderWeeklyQuest(wq) {
+function renderWeeklyQuest(wq, periodLabel = '本週') {
   if (!wq) return ''
   const wqSports = [
     { key:'ride',   icon:'🚴', label:'RIDE',  isOr:true,  tKm:'30KM', tHr:'1HR' },
@@ -902,7 +902,7 @@ function renderWeeklyQuest(wq) {
     </div>`
   }).join('')
   return `
-    <div class="section-title">本週任務 <span class="muted">· WEEKLY QUEST</span></div>
+    <div class="section-title">${periodLabel}任務 <span class="muted">· WEEKLY QUEST</span></div>
     <div class="quest-grid">${tiles}</div>`
 }
 function renderSegments(segs) {
@@ -1151,6 +1151,96 @@ function render(data) {
     const wWeights = (data.recent_weights || []).filter(inWeek)
     data.weekly_quest.weight.parts = detectTrainPartsFromActivities(wWeights)
   }
+
+  // A newly-started month can legitimately be empty. In that case, show the
+  // latest month that contains activities so a successful sync never looks blank.
+  const hasMonthActivity = h =>
+    (h?.ride?.count || 0) + (h?.run?.count || 0) +
+    (h?.swim?.count || 0) + (h?.weight_training?.count || 0) > 0
+  const displayHistoryMonth = hasMonthActivity(mh)
+    ? mh
+    : history.find(hasMonthActivity)
+  const displayMonth = displayHistoryMonth?.month || thisMonth
+  const displayPeriodLabel = displayMonth === thisMonth
+    ? '本月'
+    : `${displayMonth.slice(0, 4)} 年 ${Number(displayMonth.slice(5, 7))} 月`
+  const inDisplayMonth = a => (a?.date || '').startsWith(displayMonth)
+  const monthRides = (data.recent_rides || []).filter(inDisplayMonth)
+  const monthRuns = (data.recent_runs || []).filter(inDisplayMonth)
+  const monthSwims = (data.recent_swims || []).filter(inDisplayMonth)
+  const monthWeights = (data.recent_weights || []).filter(inDisplayMonth)
+  const monthHours = items => Math.round(items.reduce((sum, a) => sum + (a.moving_time_sec || 0), 0) / 360) / 10
+  const goalStatus = (count, target) => {
+    const ratio = target ? count / target : 0
+    return ratio >= 1.5 ? 'over' : ratio >= 1 ? 'done' : ratio >= 0.5 ? 'warning' : 'danger'
+  }
+  const displayMonthlySummary = displayMonth === thisMonth
+    ? data.monthly_summary
+    : {
+        ride_km: displayHistoryMonth?.ride?.distance_km || 0,
+        ride_hr: monthHours(monthRides),
+        run_km: displayHistoryMonth?.run?.distance_km || 0,
+        run_hr: monthHours(monthRuns),
+        swim_m: Math.round((displayHistoryMonth?.swim?.distance_km || 0) * 1000),
+        swim_hr: monthHours(monthSwims),
+        weight_count: displayHistoryMonth?.weight_training?.count || 0,
+        weight_hr: monthHours(monthWeights),
+      }
+  const displayCounts = {
+    ride: displayHistoryMonth?.ride?.count || 0,
+    run: displayHistoryMonth?.run?.count || 0,
+    swim: displayHistoryMonth?.swim?.count || 0,
+    weight: displayHistoryMonth?.weight_training?.count || 0,
+  }
+  const displayMonthlyGoals = displayMonth === thisMonth
+    ? data.monthly_goals
+    : Object.fromEntries(Object.entries(displayCounts).map(([key, count]) => {
+        const target = key === 'weight' ? 10 : 4
+        return [key, { count, target, status: goalStatus(count, target) }]
+      }))
+
+  const questHasActivity = q =>
+    (q?.ride?.distance_km || 0) > 0 || (q?.ride?.moving_time_hr || 0) > 0 ||
+    (q?.run?.distance_km || 0) > 0 || (q?.run?.moving_time_hr || 0) > 0 ||
+    (q?.swim?.distance_m || 0) > 0 || (q?.swim?.moving_time_hr || 0) > 0 ||
+    (q?.weight?.count || 0) > 0
+  let displayWeeklyQuest = data.weekly_quest
+  let displayWeekLabel = '本週'
+  if (!questHasActivity(displayWeeklyQuest)) {
+    const datedActivities = [
+      ...(data.recent_rides || []), ...(data.recent_runs || []),
+      ...(data.recent_swims || []), ...(data.recent_weights || []),
+    ].filter(a => /^\d{4}-\d{2}-\d{2}$/.test(a?.date || ''))
+      .sort((a, b) => b.date.localeCompare(a.date))
+    const latestDate = datedActivities[0]?.date
+    if (latestDate) {
+      const latest = new Date(`${latestDate}T00:00:00Z`)
+      const weekStartDate = new Date(latest)
+      weekStartDate.setUTCDate(latest.getUTCDate() - ((latest.getUTCDay() + 6) % 7))
+      const weekEndDate = new Date(weekStartDate)
+      weekEndDate.setUTCDate(weekStartDate.getUTCDate() + 6)
+      const weekStart = weekStartDate.toISOString().slice(0, 10)
+      const weekEnd = weekEndDate.toISOString().slice(0, 10)
+      const inLatestWeek = a => (a?.date || '') >= weekStart && (a?.date || '') <= weekEnd
+      const rides = (data.recent_rides || []).filter(inLatestWeek)
+      const runs = (data.recent_runs || []).filter(inLatestWeek)
+      const swims = (data.recent_swims || []).filter(inLatestWeek)
+      const weights = (data.recent_weights || []).filter(inLatestWeek)
+      const distanceKm = items => Math.round(items.reduce((sum, a) => sum + (a.distance_km || 0), 0) * 10) / 10
+      const hours = items => Math.round(items.reduce((sum, a) => sum + (a.moving_time_sec || 0), 0) / 360) / 10
+      const rideKm = distanceKm(rides), rideHr = hours(rides)
+      const runKm = distanceKm(runs), runHr = hours(runs)
+      const swimM = Math.round(distanceKm(swims) * 1000), swimHr = hours(swims)
+      displayWeeklyQuest = {
+        ride: { done: rideKm >= 30 || rideHr >= 1, super: rideKm >= 30 && rideHr >= 1, distance_km: rideKm, moving_time_hr: rideHr, target_km: 30, target_hr: 1 },
+        run: { done: runKm >= 10 || runHr >= 1, super: runKm >= 10 && runHr >= 1, distance_km: runKm, moving_time_hr: runHr, target_km: 10, target_hr: 1 },
+        swim: { done: swimM >= 1000 || swimHr >= 1, super: swimM >= 1000 && swimHr >= 1, distance_m: swimM, moving_time_hr: swimHr, target_m: 1000, target_hr: 1 },
+        weight: { done: weights.length >= 1, count: weights.length, target: 1, parts: detectTrainPartsFromActivities(weights) },
+      }
+      const shortDate = value => `${Number(value.slice(5, 7))}/${Number(value.slice(8, 10))}`
+      displayWeekLabel = `最近活動週 ${shortDate(weekStart)}–${shortDate(weekEnd)}`
+    }
+  }
   const maxDist = Math.max(...history.map(monthDist), 1)
 
   // build ALL list (merged, sorted by date)
@@ -1204,7 +1294,7 @@ function render(data) {
   document.getElementById('content').innerHTML = `
     <div class="hero">
       <div class="avatar">
-        <img src="docs/martin-avatar.jpg" alt="Martin"
+        <img src="docs/martin-avatar-basketball.png" alt="Martin basketball portrait"
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <svg viewBox="0 0 24 24" style="display:none">${ICONS.ride}</svg>
       </div>
@@ -1218,9 +1308,9 @@ function render(data) {
       ${renderPowerCard(data.power_prs)}
     </div>
 
-    ${renderMonthlySummary(data.monthly_summary)}
-    ${renderMonthlyGoals(data.monthly_goals)}
-    ${renderWeeklyQuest(data.weekly_quest)}
+    ${renderMonthlySummary(displayMonthlySummary, displayPeriodLabel)}
+    ${renderMonthlyGoals(displayMonthlyGoals, displayPeriodLabel)}
+    ${renderWeeklyQuest(displayWeeklyQuest, displayWeekLabel)}
     ${renderSegments(data.segments)}
 
     ${history.length ? `
@@ -1528,7 +1618,7 @@ function renderPowerModal(prs) {
             </div>
           </div>
           <div class="pm-act-card" id="pm-act-card">
-            <img class="pm-act-avatar" src="docs/martin-avatar.jpg" alt="" aria-hidden="true" onerror="this.style.display='none'">
+            <img class="pm-act-avatar" src="docs/martin-avatar-basketball.png" alt="" aria-hidden="true" onerror="this.style.display='none'">
             <div class="pmc-tag">👑 全時段最佳紀錄</div>
             <div class="pmc-row"><span class="pmc-ico">📍</span><a id="pmc-name" href="#" target="_blank" rel="noopener">—</a></div>
             <div class="pmc-row"><span class="pmc-ico">📅</span><span id="pmc-date">—</span></div>
