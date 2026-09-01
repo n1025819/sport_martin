@@ -1,6 +1,6 @@
 {
   "source": "garmin_connect",
-  "updated_at": "2026-09-01T12:51:04.964053Z",
+  "updated_at": "2026-09-01T13:23:21.439546Z",
   "summary": {
     "ytd_distance_km": 1712.2,
     "ytd_elevation_m": 21557,
@@ -5396,6 +5396,23 @@
   ],
   "recent_weights": [
     {
+      "id": 24196426794,
+      "name": "肌力訓練",
+      "date": "2026-09-01",
+      "time": "07:40",
+      "moving_time_sec": 1570,
+      "moving_time_hr": 0.4,
+      "avg_heartrate": 75,
+      "max_heartrate": 126,
+      "calories_kcal": 152,
+      "description": null,
+      "source": "garmin_connect",
+      "source_activity_type": "strength_training",
+      "total_sets": 5,
+      "total_reps": 44,
+      "total_volume": null
+    },
+    {
       "id": 24135449958,
       "name": "肌力訓練",
       "date": "2026-08-27",
@@ -7160,6 +7177,25 @@
       "weight_training": {
         "count": 17
       }
+    },
+    {
+      "month": "2026-09",
+      "ride": {
+        "distance_km": 0,
+        "elevation_m": 0,
+        "count": 0
+      },
+      "run": {
+        "distance_km": 0,
+        "count": 0
+      },
+      "swim": {
+        "distance_km": 0,
+        "count": 0
+      },
+      "weight_training": {
+        "count": 1
+      }
     }
   ],
   "monthly_summary": {
@@ -7169,8 +7205,8 @@
     "run_hr": 0.0,
     "swim_m": 0,
     "swim_hr": 0.0,
-    "weight_count": 0,
-    "weight_hr": 0.0
+    "weight_count": 1,
+    "weight_hr": 0.4
   },
   "monthly_goals": {
     "ride": {
@@ -7189,7 +7225,7 @@
       "status": "danger"
     },
     "weight": {
-      "count": 0,
+      "count": 1,
       "target": 10,
       "status": "danger"
     }
@@ -7217,8 +7253,8 @@
       "target_hr": 1
     },
     "weight": {
-      "done": false,
-      "count": 0,
+      "done": true,
+      "count": 1,
       "target": 1,
       "parts": {
         "chest": false,
