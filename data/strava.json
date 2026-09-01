@@ -1,6 +1,6 @@
 {
   "source": "garmin_connect",
-  "updated_at": "2026-09-01T13:54:33.798496Z",
+  "updated_at": "2026-09-01T14:25:02.002120Z",
   "summary": {
     "ytd_distance_km": 1712.2,
     "ytd_elevation_m": 21557,
@@ -7297,6 +7297,11 @@
       "count": 1,
       "target": 10,
       "status": "danger"
+    },
+    "hyrox": {
+      "count": 1,
+      "target": 4,
+      "status": "danger"
     }
   },
   "weekly_quest": {
@@ -7332,6 +7337,11 @@
         "shoulders": false,
         "arms": false
       }
+    },
+    "hyrox": {
+      "done": true,
+      "count": 1,
+      "target": 1
     }
   },
   "segments": [],
