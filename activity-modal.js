@@ -515,7 +515,7 @@
             <a class="am-strava" href="https://connect.garmin.com/modern/activity/${esc(id)}" target="_blank" rel="noopener">Garmin ↗</a>
             <button class="am-close" type="button" onclick="closeActivityModal()">×</button>
           </div>
-          <div class="am-body"><div class="am-empty">該活動可能不在最近記錄中，請點右上角前往 Strava。</div></div>
+        <div class="am-body"><div class="am-empty">該活動可能不在最近記錄中，請點右上角前往 Garmin Connect。</div></div>
         `)
         return
       }
