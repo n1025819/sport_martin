@@ -787,6 +787,7 @@ const SPORT_META = {
   run:    { icon: '🏃', label: '跑步' },
   swim:   { icon: '🏊', label: '游泳' },
   weight: { icon: '🏋️', label: '重訓' },
+  hyrox:  { icon: '🏁', label: 'HYROX' },
 }
 const STATUS_META = {
   danger:  { emoji: '🔴', text: '嚴重落後' },
@@ -811,7 +812,7 @@ function renderMonthlySummary(ms, periodLabel = '本月') {
 }
 function renderMonthlyGoals(mg, periodLabel = '本月') {
   if (!mg) return ''
-  const order = ['ride','run','swim','weight']
+  const order = ['ride','run','swim','weight','hyrox']
   const rows = order.map(k => {
     const g = mg[k]; if (!g) return ''
     const meta = SPORT_META[k]
@@ -1138,12 +1139,13 @@ function render(data) {
       }
     }
     if ((!data.monthly_goals || isStaleMonth) && mh) {
-      const rc = mh.ride?.count ?? 0, rnc = mh.run?.count ?? 0, sc = mh.swim?.count ?? 0, wc = mh.weight_training?.count ?? 0
+      const rc = mh.ride?.count ?? 0, rnc = mh.run?.count ?? 0, sc = mh.swim?.count ?? 0, wc = mh.weight_training?.count ?? 0, hc = mh.hyrox?.count ?? 0
       data.monthly_goals = {
         ride:   { count: rc,  target: TARGET,        status: sOf(rc,  TARGET)        },
         run:    { count: rnc, target: TARGET,        status: sOf(rnc, TARGET)        },
         swim:   { count: sc,  target: TARGET,        status: sOf(sc,  TARGET)        },
         weight: { count: wc,  target: TARGET_WEIGHT, status: sOf(wc,  TARGET_WEIGHT) },
+        hyrox:  { count: hc,  target: TARGET,        status: sOf(hc,  TARGET)        },
       }
     }
     if (!data.weekly_quest || isStaleWeek) {
@@ -1218,9 +1220,17 @@ function render(data) {
     run: displayHistoryMonth?.run?.count || 0,
     swim: displayHistoryMonth?.swim?.count || 0,
     weight: displayHistoryMonth?.weight_training?.count || 0,
+    hyrox: displayHistoryMonth?.hyrox?.count || 0,
   }
   const displayMonthlyGoals = displayMonth === thisMonth
-    ? data.monthly_goals
+    ? {
+        ...(data.monthly_goals || {}),
+        hyrox: data.monthly_goals?.hyrox || {
+          count: displayCounts.hyrox,
+          target: 4,
+          status: goalStatus(displayCounts.hyrox, 4),
+        },
+      }
     : Object.fromEntries(Object.entries(displayCounts).map(([key, count]) => {
         const target = key === 'weight' ? 10 : 4
         return [key, { count, target, status: goalStatus(count, target) }]
@@ -1296,7 +1306,7 @@ function render(data) {
     { key:'hyrox',  label:'🏁 HYROX', list: data.recent_hyrox   },
   ]
   // only show tabs that have data
-  const activeTabs = tabs.filter(t => t.list && t.list.length > 0)
+  const activeTabs = tabs.filter(t => t.key === 'hyrox' || (t.list && t.list.length > 0))
   let activeTab = activeTabs[0]?.key || 'all'
   const showMore = {} // tab key → expanded boolean
 

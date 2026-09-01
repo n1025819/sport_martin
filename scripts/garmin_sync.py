@@ -273,6 +273,7 @@ def build_dashboard(activities, existing=None, fetch_all=True, ftp=238):
             "run": {"count": len(month["run"]), "target": 4, "status": status_of(len(month["run"]), 4)},
             "swim": {"count": len(month["swim"]), "target": 4, "status": status_of(len(month["swim"]), 4)},
             "weight": {"count": len(month["weight"]), "target": 10, "status": status_of(len(month["weight"]), 10)},
+            "hyrox": {"count": len(month["hyrox"]), "target": 4, "status": status_of(len(month["hyrox"]), 4)},
         },
         "weekly_quest": {
             "ride": {"done": sum_km(week["ride"]) >= 30 or sum_hr(week["ride"]) >= 1, "distance_km": sum_km(week["ride"]), "moving_time_hr": sum_hr(week["ride"]), "target_km": 30, "target_hr": 1},

@@ -39,6 +39,8 @@ class GarminDashboardTests(unittest.TestCase):
         self.assertEqual(len(data["recent_weights"]), 0)
         self.assertEqual(data["monthly_summary"]["hyrox_count"], 1)
         self.assertEqual(data["monthly_summary"]["hyrox_hr"], 1.0)
+        self.assertEqual(data["monthly_goals"]["hyrox"]["count"], 1)
+        self.assertEqual(data["monthly_goals"]["hyrox"]["target"], 4)
         self.assertTrue(data["weekly_quest"]["hyrox"]["done"])
         self.assertEqual(data["weekly_quest"]["hyrox"]["count"], 1)
 
