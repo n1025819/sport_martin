@@ -23,6 +23,23 @@ class GarminDashboardTests(unittest.TestCase):
         self.assertEqual(data["segments"], [])
         self.assertEqual(data["power_prs"], [])
 
+    def test_hyrox_name_gets_its_own_category(self):
+        activities = [{
+            "activityId": 9001,
+            "activityName": "HYROX 訓練",
+            "activityType": {"typeKey": "strength_training"},
+            "startTimeLocal": "2026-09-01 18:30:00",
+            "duration": 3600,
+            "movingDuration": 3600,
+        }]
+
+        data = build_dashboard(activities, fetch_all=True)
+
+        self.assertEqual(len(data["recent_hyrox"]), 1)
+        self.assertEqual(len(data["recent_weights"]), 0)
+        self.assertEqual(data["monthly_summary"]["hyrox_count"], 1)
+        self.assertEqual(data["monthly_summary"]["hyrox_hr"], 1.0)
+
 
 if __name__ == "__main__":
     unittest.main()

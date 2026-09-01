@@ -49,6 +49,9 @@ def type_key(activity):
 
 def category(activity):
     key = type_key(activity)
+    name = str(activity.get("activityName") or "").lower()
+    if "hyrox" in key or "hyrox" in name:
+        return "hyrox"
     if key in RIDE_KEYS or any(x in key for x in ("cycling", "biking", "bike", "ride")):
         return "ride"
     if key in RUN_KEYS or "running" in key or key.endswith("_run"):
@@ -106,7 +109,7 @@ def activity_card(activity, kind, ftp):
     if speed <= 0 and moving > 0:
         speed = distance / moving
 
-    if kind == "weight":
+    if kind in ("weight", "hyrox"):
         card.update({
             "total_sets": activity.get("totalSets"),
             "total_reps": activity.get("totalReps"),
@@ -168,15 +171,28 @@ def status_of(count, target):
 
 def build_dashboard(activities, existing=None, fetch_all=True, ftp=238):
     existing = existing if isinstance(existing, dict) and existing.get("source") == "garmin_connect" else {}
-    grouped = {"ride": [], "run": [], "swim": [], "weight": []}
+    grouped = {"ride": [], "run": [], "swim": [], "weight": [], "hyrox": []}
     for activity in activities:
         kind = category(activity)
         if kind:
             grouped[kind].append(activity_card(activity, kind, ftp))
 
     lists = {}
-    for kind, json_key in (("ride", "recent_rides"), ("run", "recent_runs"), ("swim", "recent_swims"), ("weight", "recent_weights")):
+    for kind, json_key in (("ride", "recent_rides"), ("run", "recent_runs"), ("swim", "recent_swims"), ("weight", "recent_weights"), ("hyrox", "recent_hyrox")):
         lists[kind] = merge_cards(grouped[kind], existing.get(json_key, []), fetch_all)
+
+    # An activity renamed in Garmin (for example strength training → HYROX)
+    # must move categories during incremental sync instead of being counted twice.
+    fetched_categories = {
+        str(activity.get("activityId")): category(activity)
+        for activity in activities
+        if activity.get("activityId") is not None and category(activity)
+    }
+    for kind in lists:
+        lists[kind] = [
+            item for item in lists[kind]
+            if fetched_categories.get(str(item.get("id")), kind) == kind
+        ]
 
     now = datetime.now(TAIPEI)
     year_prefix = str(now.year) + "-"
@@ -195,12 +211,14 @@ def build_dashboard(activities, existing=None, fetch_all=True, ftp=238):
         runs = in_period(lists["run"], prefix=month)
         swims = in_period(lists["swim"], prefix=month)
         weights = in_period(lists["weight"], prefix=month)
+        hyrox = in_period(lists["hyrox"], prefix=month)
         history.append({
             "month": month,
             "ride": {"distance_km": round(sum(x.get("distance_km", 0) for x in rides), 1), "elevation_m": round(sum(x.get("elevation_m", 0) for x in rides)), "count": len(rides)},
             "run": {"distance_km": round(sum(x.get("distance_km", 0) for x in runs), 1), "count": len(runs)},
             "swim": {"distance_km": round(sum(x.get("distance_km", 0) for x in swims), 1), "count": len(swims)},
             "weight_training": {"count": len(weights)},
+            "hyrox": {"count": len(hyrox)},
         })
 
     month = {kind: in_period(values, prefix=month_prefix) for kind, values in lists.items()}
@@ -241,12 +259,14 @@ def build_dashboard(activities, existing=None, fetch_all=True, ftp=238):
         "recent_runs": lists["run"],
         "recent_swims": lists["swim"],
         "recent_weights": lists["weight"],
+        "recent_hyrox": lists["hyrox"],
         "monthly_history": history,
         "monthly_summary": {
             "ride_km": sum_km(month["ride"]), "ride_hr": sum_hr(month["ride"]),
             "run_km": sum_km(month["run"]), "run_hr": sum_hr(month["run"]),
             "swim_m": round(sum_km(month["swim"]) * 1000), "swim_hr": sum_hr(month["swim"]),
             "weight_count": len(month["weight"]), "weight_hr": sum_hr(month["weight"]),
+            "hyrox_count": len(month["hyrox"]), "hyrox_hr": sum_hr(month["hyrox"]),
         },
         "monthly_goals": {
             "ride": {"count": len(month["ride"]), "target": 4, "status": status_of(len(month["ride"]), 4)},
