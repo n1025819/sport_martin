@@ -1,2 +1,6 @@
 athlete/*.csv
 scripts/.env
+data/garmin_tokens.json
+.garminconnect/
+.venv-garmin/
+__pycache__/

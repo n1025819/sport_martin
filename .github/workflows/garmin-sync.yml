@@ -1,0 +1,54 @@
+name: Garmin Daily Sync
+
+on:
+  schedule:
+    - cron: '0 2 * * *'   # 台灣 10:00
+    - cron: '0 10 * * *'  # 台灣 18:00
+    - cron: '0 14 * * *'  # 台灣 22:00
+  workflow_dispatch:
+    inputs:
+      fetch_all:
+        description: '第一次設定時勾選：抓取全部 Garmin 歷史活動'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    env:
+      GARMIN_TOKEN_KEY: ${{ secrets.GARMIN_TOKEN_KEY }}
+      GARMIN_FETCH_ALL: ${{ inputs.fetch_all == true && '1' || '0' }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Garmin 尚未設定
+        if: ${{ env.GARMIN_TOKEN_KEY == '' }}
+        run: echo "尚未設定 GARMIN_TOKEN_KEY，跳過同步。"
+
+      - name: Setup Python
+        if: ${{ env.GARMIN_TOKEN_KEY != '' }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install Garmin client
+        if: ${{ env.GARMIN_TOKEN_KEY != '' }}
+        run: pip install -r requirements-garmin.txt
+
+      - name: Fetch Garmin activities
+        if: ${{ env.GARMIN_TOKEN_KEY != '' }}
+        run: python scripts/garmin_sync.py
+
+      - name: Commit dashboard data and refreshed token
+        if: ${{ env.GARMIN_TOKEN_KEY != '' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/strava.json data/garmin-tokens.enc
+          git diff --staged --quiet || git commit -m "chore: update Garmin data $(date -u '+%Y-%m-%d')"
+          git push

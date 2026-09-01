@@ -419,7 +419,7 @@
     const dur = fmtDuration(a.moving_time_sec)
     const isIndoor = !!a.trainer
     const tag = isIndoor ? '🏠 室內' : '🚴 公路車'
-    const stravaUrl = `https://www.strava.com/activities/${a.id}`
+    const stravaUrl = `https://connect.garmin.com/modern/activity/${a.id}`
 
     const sub = [
       date ? `<span>📅 ${esc(date)}</span>` : '',
@@ -512,7 +512,7 @@
         openModal(`
           <div class="am-head">
             <div class="am-title-wrap"><div class="am-name">查無此活動詳情</div><div class="am-sub">活動 ID: ${esc(id)}</div></div>
-            <a class="am-strava" href="https://www.strava.com/activities/${esc(id)}" target="_blank" rel="noopener">Strava ↗</a>
+            <a class="am-strava" href="https://connect.garmin.com/modern/activity/${esc(id)}" target="_blank" rel="noopener">Garmin ↗</a>
             <button class="am-close" type="button" onclick="closeActivityModal()">×</button>
           </div>
           <div class="am-body"><div class="am-empty">該活動可能不在最近記錄中，請點右上角前往 Strava。</div></div>

@@ -1,0 +1,58 @@
+[
+  {
+    "activityId": 900001,
+    "activityName": "Morning Ride",
+    "startTimeLocal": "2026-08-31 06:30:00",
+    "activityType": {"typeKey": "road_biking"},
+    "distance": 32150,
+    "movingDuration": 5100,
+    "elevationGain": 420,
+    "averageSpeed": 6.30,
+    "averageHR": 142,
+    "maxHR": 175,
+    "avgPower": 168,
+    "maxPower": 612,
+    "normPower": 193,
+    "averageBikingCadenceInRevPerMinute": 81,
+    "calories": 980
+  },
+  {
+    "activityId": 900002,
+    "activityName": "Evening Run",
+    "startTimeLocal": "2026-08-30 18:10:00",
+    "activityType": {"typeKey": "running"},
+    "distance": 10000,
+    "movingDuration": 3120,
+    "elevationGain": 65,
+    "averageSpeed": 3.205,
+    "maxSpeed": 4.8,
+    "averageHR": 155,
+    "maxHR": 178,
+    "averageRunningCadenceInStepsPerMinute": 174,
+    "calories": 720
+  },
+  {
+    "activityId": 900003,
+    "activityName": "Pool Swim",
+    "startTimeLocal": "2026-08-29 07:00:00",
+    "activityType": {"typeKey": "lap_swimming"},
+    "distance": 1500,
+    "movingDuration": 2100,
+    "averageSpeed": 0.714,
+    "averageHR": 128,
+    "maxHR": 151,
+    "calories": 360
+  },
+  {
+    "activityId": 900004,
+    "activityName": "Chest Strength Training",
+    "startTimeLocal": "2026-08-28 19:00:00",
+    "activityType": {"typeKey": "strength_training"},
+    "duration": 3600,
+    "averageHR": 112,
+    "maxHR": 148,
+    "calories": 410,
+    "totalSets": 18,
+    "totalReps": 144
+  }
+]

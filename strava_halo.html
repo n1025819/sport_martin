@@ -2,8 +2,6 @@
 <html lang="zh-TW">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="refresh" content="0; url=strava.html">
-<script>location.replace('strava.html')</script>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>HALO 117 · Spartan Telemetry</title>
 <style>
@@ -1031,7 +1029,7 @@ function renderTimeline(list, type, expanded, ittMap) {
         const powerHtml = showPower
           ? `<div class="power-metrics">${a.if_score != null ? `<span class="pm-pill">IF ${a.if_score}</span>` : ''}${a.tss != null ? `<span class="pm-pill">TSS ${a.tss}</span>` : ''}</div>`
           : ''
-        const stravaLink = a.id ? `<a class="act-strava-link" href="https://www.strava.com/activities/${a.id}" target="_blank" rel="noopener">Strava ↗</a>` : ''
+        const stravaLink = a.id ? `<a class="act-strava-link" href="https://connect.garmin.com/modern/activity/${a.id}" target="_blank" rel="noopener">Garmin ↗</a>` : ''
         const ittBadges = (aIsRide && ittMap && ittMap[date])
           ? ittMap[date].map(it => {
               const isPr = it.is_pr
@@ -1206,12 +1204,12 @@ function render(data) {
   document.getElementById('content').innerHTML = `
     <div class="hero">
       <div class="avatar">
-        <img src="docs/avatar.jpg" alt="SC"
+        <img src="docs/martin-avatar.jpg" alt="Martin"
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <svg viewBox="0 0 24 24" style="display:none">${ICONS.ride}</svg>
       </div>
       <div class="hero-info">
-        <h1>STEVE · 117
+        <h1>MARTIN
           <svg class="verified" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
         </h1>
         <div class="hero-sub">MASTER CHIEF · SPARTAN-117 · MJOLNIR MK VII</div>
@@ -1291,9 +1289,9 @@ function render(data) {
       </div>
     </div>
 
-    <a class="strava-cta" href="https://www.strava.com/athletes/161539959" target="_blank">
+    <a class="strava-cta" href="https://connect.garmin.com/modern/activities" target="_blank">
       <svg viewBox="0 0 24 24"><path d="M15.387 17.944l-2.089-4.116h-3.065L15.387 24l5.15-10.172h-3.066m-7.008-5.599l2.836 5.598h4.172L10.463 0l-7 13.828h4.169"/></svg>
-      View full profile on Strava
+      View activities on Garmin Connect
     </a>
   `
 
@@ -1381,7 +1379,7 @@ function render(data) {
           // activity too old, not in recent data — show toast
           const toast = document.createElement('div')
           toast.innerHTML = actId
-            ? `📅 ${date} 不在最近記錄 &nbsp;<a href="https://www.strava.com/activities/${actId}" target="_blank" style="color:#ffc724;font-weight:700;text-decoration:underline">前往 Strava ↗</a>`
+            ? `📅 ${date} 不在最近記錄 &nbsp;<a href="https://connect.garmin.com/modern/activity/${actId}" target="_blank" style="color:#ffc724;font-weight:700;text-decoration:underline">前往 Garmin ↗</a>`
             : `📅 ${date} 的活動不在最近記錄內`
           toast.style.cssText = 'position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:rgba(20,28,40,.9);color:#ffc724;border:1px solid rgba(255,199,36,.4);padding:8px 18px;border-radius:8px;font-size:12px;letter-spacing:1px;z-index:9999'
           document.body.appendChild(toast)
@@ -1463,7 +1461,7 @@ function renderPowerModal(prs) {
   const rows = PWR_DURATIONS.map(d => {
     const p = map.get(d.sec)
     if (!p) return `<tr class="empty" data-dur="${d.sec}"><td class="dur">⚡ ${d.label}</td><td>—</td><td class="act">—</td><td class="date">—</td></tr>`
-    const link = `https://www.strava.com/activities/${p.activity_id}`
+    const link = `https://connect.garmin.com/modern/activity/${p.activity_id}`
     return `<tr data-dur="${d.sec}"${d.sec===5?' class="active"':''}>
       <td class="dur">⚡ ${d.label}</td>
       <td class="watt">${p.watts}</td>
@@ -1530,7 +1528,7 @@ function renderPowerModal(prs) {
             </div>
           </div>
           <div class="pm-act-card" id="pm-act-card">
-            <img class="pm-act-avatar" src="docs/avatar.jpg" alt="" aria-hidden="true" onerror="this.style.display='none'">
+            <img class="pm-act-avatar" src="docs/martin-avatar.jpg" alt="" aria-hidden="true" onerror="this.style.display='none'">
             <div class="pmc-tag">👑 全時段最佳紀錄</div>
             <div class="pmc-row"><span class="pmc-ico">📍</span><a id="pmc-name" href="#" target="_blank" rel="noopener">—</a></div>
             <div class="pmc-row"><span class="pmc-ico">📅</span><span id="pmc-date">—</span></div>
@@ -1564,7 +1562,7 @@ function updatePwrModalTab(prs, durSec) {
   document.getElementById('pm-dial-fg').setAttribute('stroke-dasharray', circ.toFixed(1))
   document.getElementById('pm-dial-fg').setAttribute('stroke-dashoffset', (circ * (1 - ratio)).toFixed(1))
   if (p) {
-    const link = `https://www.strava.com/activities/${p.activity_id}`
+    const link = `https://connect.garmin.com/modern/activity/${p.activity_id}`
     const a = document.getElementById('pmc-name')
     a.textContent = p.activity_name || '—'
     a.href = link
@@ -1627,7 +1625,7 @@ function bindPowerCard(prs) {
   })
 }
 
-/* ── fetch strava.json ── */
+/* ── fetch Garmin-generated dashboard JSON ── */
 fetch('data/strava.json')
   .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json() })
   .then(data => { render(data); bindPowerCard(data.power_prs) })
@@ -1635,7 +1633,7 @@ fetch('data/strava.json')
     document.getElementById('content').innerHTML = `
       <div class="loading" style="color:#ffc724">
         載入失敗：${err.message}<br><br>
-        <span style="color:#555;font-size:12px">請先執行 GitHub Actions 產生 strava.json</span>
+        <span style="color:#555;font-size:12px">請先完成 Garmin 登入並執行 Garmin Daily Sync</span>
       </div>
     `
   })

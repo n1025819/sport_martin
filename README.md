@@ -1,12 +1,40 @@
 # Personal Sport Hub
 
-> **目前這個 fork 使用 Strava 官方 Embed 顯示公開活動摘要，不需要 Strava API App、訂閱或 GitHub Secrets。**
-> 活動頁設定在 `strava.html`；原有 API 同步程式僅保留作為舊版參考，不會自動執行。
+> **目前這個 fork 使用 Garmin Connect 活動資料，不需要 Strava 訂閱。**
+> Garmin Connect 並未提供個人用公開 API，因此同步使用非官方 `python-garminconnect`；Garmin 改版時可能需要更新套件。
 
-> 太空主題個人入口網站，整合線上履歷與 Strava 公開活動摘要。
-> 部署於 GitHub Pages，活動內容由 Strava 官方 Embed 自動顯示。
+> 太空主題個人入口網站，整合線上履歷與 Garmin 運動儀表板。
+> 部署於 GitHub Pages，每天由 GitHub Actions 更新三次。
 
 🔗 **Live：** https://n1025819.github.io/sport_martin/linkTreeIndex.html
+
+## Garmin Connect 首次設定
+
+Garmin 密碼只在你的電腦第一次登入時使用，不會寫入 repo 或 GitHub Secrets。登入權杖會以 Fernet 加密後保存於 `data/garmin-tokens.enc`，加密金鑰只放在 GitHub Secret。
+
+```powershell
+# 1. 這台電腦目前需要先安裝 Python 3.12
+winget install --id Python.Python.3.12 -e
+
+# 2. 建立獨立環境並安裝依賴
+py -3.12 -m venv .venv-garmin
+.\.venv-garmin\Scripts\python -m pip install -r requirements-garmin.txt
+
+# 3. 互動登入 Garmin；若有 MFA，依提示輸入驗證碼
+.\.venv-garmin\Scripts\python scripts\garmin_login.py
+```
+
+登入成功後：
+
+1. 複製終端機顯示的 `GARMIN_TOKEN_KEY`。
+2. 到 GitHub repo → Settings → Secrets and variables → Actions。
+3. 建立 Repository secret：名稱 `GARMIN_TOKEN_KEY`，值貼上剛才的 key。
+4. 將 `data/garmin-tokens.enc` commit 並 push。
+5. 到 Actions → Garmin Daily Sync → Run workflow，第一次勾選「抓取全部 Garmin 歷史活動」。
+
+之後每天台灣時間 10:00、18:00、22:00 自動增量更新。請勿公開 `GARMIN_TOKEN_KEY`，也不要提交未加密的 `garmin_tokens.json`。
+
+> 舊版 Strava API 程式仍保留作為歷史參考，但目前不會執行。
 
 ---
 
