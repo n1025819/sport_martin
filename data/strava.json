@@ -1,6 +1,6 @@
 {
   "source": "garmin_connect",
-  "updated_at": "2026-09-01T13:23:21.439546Z",
+  "updated_at": "2026-09-01T13:53:17.680693Z",
   "summary": {
     "ytd_distance_km": 1712.2,
     "ytd_elevation_m": 21557,
@@ -6892,6 +6892,25 @@
       "total_volume": null
     }
   ],
+  "recent_hyrox": [
+    {
+      "id": 24196918676,
+      "name": "Hyrox訓練",
+      "date": "2026-09-01",
+      "time": "21:50",
+      "moving_time_sec": 21,
+      "moving_time_hr": 0.0,
+      "avg_heartrate": 68,
+      "max_heartrate": 70,
+      "calories_kcal": 1,
+      "description": null,
+      "source": "garmin_connect",
+      "source_activity_type": "strength_training",
+      "total_sets": 2,
+      "total_reps": 0,
+      "total_volume": null
+    }
+  ],
   "monthly_history": [
     {
       "month": "2025-02",
@@ -6909,6 +6928,9 @@
         "count": 0
       },
       "weight_training": {
+        "count": 0
+      },
+      "hyrox": {
         "count": 0
       }
     },
@@ -6929,6 +6951,9 @@
       },
       "weight_training": {
         "count": 1
+      },
+      "hyrox": {
+        "count": 0
       }
     },
     {
@@ -6948,6 +6973,9 @@
       },
       "weight_training": {
         "count": 3
+      },
+      "hyrox": {
+        "count": 0
       }
     },
     {
@@ -6966,6 +6994,9 @@
         "count": 7
       },
       "weight_training": {
+        "count": 0
+      },
+      "hyrox": {
         "count": 0
       }
     },
@@ -6986,6 +7017,9 @@
       },
       "weight_training": {
         "count": 0
+      },
+      "hyrox": {
+        "count": 0
       }
     },
     {
@@ -7004,6 +7038,9 @@
         "count": 4
       },
       "weight_training": {
+        "count": 0
+      },
+      "hyrox": {
         "count": 0
       }
     },
@@ -7024,6 +7061,9 @@
       },
       "weight_training": {
         "count": 3
+      },
+      "hyrox": {
+        "count": 0
       }
     },
     {
@@ -7043,6 +7083,9 @@
       },
       "weight_training": {
         "count": 8
+      },
+      "hyrox": {
+        "count": 0
       }
     },
     {
@@ -7062,6 +7105,9 @@
       },
       "weight_training": {
         "count": 5
+      },
+      "hyrox": {
+        "count": 0
       }
     },
     {
@@ -7081,6 +7127,9 @@
       },
       "weight_training": {
         "count": 8
+      },
+      "hyrox": {
+        "count": 0
       }
     },
     {
@@ -7100,6 +7149,9 @@
       },
       "weight_training": {
         "count": 14
+      },
+      "hyrox": {
+        "count": 0
       }
     },
     {
@@ -7119,6 +7171,9 @@
       },
       "weight_training": {
         "count": 8
+      },
+      "hyrox": {
+        "count": 0
       }
     },
     {
@@ -7138,6 +7193,9 @@
       },
       "weight_training": {
         "count": 6
+      },
+      "hyrox": {
+        "count": 0
       }
     },
     {
@@ -7157,6 +7215,9 @@
       },
       "weight_training": {
         "count": 14
+      },
+      "hyrox": {
+        "count": 0
       }
     },
     {
@@ -7176,6 +7237,9 @@
       },
       "weight_training": {
         "count": 17
+      },
+      "hyrox": {
+        "count": 0
       }
     },
     {
@@ -7195,6 +7259,9 @@
       },
       "weight_training": {
         "count": 1
+      },
+      "hyrox": {
+        "count": 1
       }
     }
   ],
@@ -7206,7 +7273,9 @@
     "swim_m": 0,
     "swim_hr": 0.0,
     "weight_count": 1,
-    "weight_hr": 0.4
+    "weight_hr": 0.4,
+    "hyrox_count": 1,
+    "hyrox_hr": 0.0
   },
   "monthly_goals": {
     "ride": {
