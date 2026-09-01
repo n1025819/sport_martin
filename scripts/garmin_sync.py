@@ -279,6 +279,7 @@ def build_dashboard(activities, existing=None, fetch_all=True, ftp=238):
             "run": {"done": sum_km(week["run"]) >= 10 or sum_hr(week["run"]) >= 1, "distance_km": sum_km(week["run"]), "moving_time_hr": sum_hr(week["run"]), "target_km": 10, "target_hr": 1},
             "swim": {"done": sum_km(week["swim"]) * 1000 >= 1000 or sum_hr(week["swim"]) >= 1, "distance_m": round(sum_km(week["swim"]) * 1000), "moving_time_hr": sum_hr(week["swim"]), "target_m": 1000, "target_hr": 1},
             "weight": {"done": len(week["weight"]) >= 1, "count": len(week["weight"]), "target": 1, "parts": weight_parts(week["weight"])},
+            "hyrox": {"done": len(week["hyrox"]) >= 1, "count": len(week["hyrox"]), "target": 1},
         },
         "segments": [],
         "seg_scan_ids": [],

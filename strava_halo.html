@@ -275,6 +275,7 @@ html,body{
 
 /* ── weekly quest tiles (Mission Tier feel) ── */
 .quest-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:2rem}
+.quest-grid > .quest-tile:last-child:nth-child(odd){grid-column:1 / -1}
 @media(max-width:360px){.quest-grid{grid-template-columns:1fr}}
 .quest-tile{
   position:relative;padding:26px 18px 22px;text-align:center;user-select:none;
@@ -867,6 +868,7 @@ function renderWeeklyQuest(wq, periodLabel = '本週') {
     { key:'run',    icon:'🏃', label:'RUN',   isOr:true,  tKm:'10KM', tHr:'1HR' },
     { key:'swim',   icon:'🏊', label:'SWIM',  isOr:true,  tKm:'1000M', tHr:'1HR', unit:'m' },
     { key:'weight', icon:'🏋️', label:'TRAIN', isOr:false, targetLabel:'1 次'   },
+    { key:'hyrox',  icon:'🏁', label:'HYROX', isOr:false, targetLabel:'1 次'   },
   ]
   function isDone(v)  { return typeof v === 'object' ? v.done  : !!v }
   function isSuper(v) { return typeof v === 'object' && !!v.super }
@@ -1150,6 +1152,7 @@ function render(data) {
       const wRuns    = (data.recent_runs    || []).filter(inWeek)
       const wSwims   = (data.recent_swims   || []).filter(inWeek)
       const wWeights = (data.recent_weights || []).filter(inWeek)
+      const wHyrox   = (data.recent_hyrox   || []).filter(inWeek)
       const wRideDist = Math.round(wRides.reduce((s, a) => s + (a.distance_km || 0), 0) * 10) / 10
       const wRideHr   = Math.round(wRides.reduce((s, a) => s + (a.moving_time_hr || 0), 0) * 10) / 10
       const wRunDist  = Math.round(wRuns.reduce((s, a)  => s + (a.distance_km || 0), 0) * 10) / 10
@@ -1162,6 +1165,7 @@ function render(data) {
         run:    { done: wRunDist >= 10  || wRunHr >= 1,  super: wRunDist >= 10  && wRunHr >= 1,  distance_km: wRunDist,  moving_time_hr: wRunHr,  target_km: 10, target_hr: 1 },
         swim:   { done: wSwimM >= 1000,                   distance_m: wSwimM,    target_m: 1000 },
         weight: { done: wWeightCt >= 1,                   count: wWeightCt,      target: 1, parts: wWeightParts },
+        hyrox:  { done: wHyrox.length >= 1,               count: wHyrox.length, target: 1 },
       }
     }
   }
@@ -1226,7 +1230,7 @@ function render(data) {
     (q?.ride?.distance_km || 0) > 0 || (q?.ride?.moving_time_hr || 0) > 0 ||
     (q?.run?.distance_km || 0) > 0 || (q?.run?.moving_time_hr || 0) > 0 ||
     (q?.swim?.distance_m || 0) > 0 || (q?.swim?.moving_time_hr || 0) > 0 ||
-    (q?.weight?.count || 0) > 0
+    (q?.weight?.count || 0) > 0 || (q?.hyrox?.count || 0) > 0
   let displayWeeklyQuest = data.weekly_quest
   let displayWeekLabel = '本週'
   if (!questHasActivity(displayWeeklyQuest)) {
@@ -1250,6 +1254,7 @@ function render(data) {
       const runs = (data.recent_runs || []).filter(inLatestWeek)
       const swims = (data.recent_swims || []).filter(inLatestWeek)
       const weights = (data.recent_weights || []).filter(inLatestWeek)
+      const hyrox = (data.recent_hyrox || []).filter(inLatestWeek)
       const distanceKm = items => Math.round(items.reduce((sum, a) => sum + (a.distance_km || 0), 0) * 10) / 10
       const hours = items => Math.round(items.reduce((sum, a) => sum + (a.moving_time_sec || 0), 0) / 360) / 10
       const rideKm = distanceKm(rides), rideHr = hours(rides)
@@ -1260,6 +1265,7 @@ function render(data) {
         run: { done: runKm >= 10 || runHr >= 1, super: runKm >= 10 && runHr >= 1, distance_km: runKm, moving_time_hr: runHr, target_km: 10, target_hr: 1 },
         swim: { done: swimM >= 1000 || swimHr >= 1, super: swimM >= 1000 && swimHr >= 1, distance_m: swimM, moving_time_hr: swimHr, target_m: 1000, target_hr: 1 },
         weight: { done: weights.length >= 1, count: weights.length, target: 1, parts: detectTrainPartsFromActivities(weights) },
+        hyrox: { done: hyrox.length >= 1, count: hyrox.length, target: 1 },
       }
       const shortDate = value => `${Number(value.slice(5, 7))}/${Number(value.slice(8, 10))}`
       displayWeekLabel = `最近活動週 ${shortDate(weekStart)}–${shortDate(weekEnd)}`
