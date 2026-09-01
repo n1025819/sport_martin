@@ -23,7 +23,7 @@ jobs:
       GARMIN_FETCH_ALL: ${{ inputs.fetch_all == true && '1' || '0' }}
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Garmin 尚未設定
         if: ${{ env.GARMIN_TOKEN_KEY == '' }}
@@ -31,10 +31,11 @@ jobs:
 
       - name: Setup Python
         if: ${{ env.GARMIN_TOKEN_KEY != '' }}
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: '3.12'
           cache: pip
+          cache-dependency-path: requirements-garmin.txt
 
       - name: Install Garmin client
         if: ${{ env.GARMIN_TOKEN_KEY != '' }}
