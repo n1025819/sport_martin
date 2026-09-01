@@ -1,9 +1,12 @@
-# SteveChuang · Personal Hub
+# Personal Sport Hub
 
-> 太空主題個人入口網站，整合線上履歷與 Strava 運動儀表板。
-> 部署於 GitHub Pages，每天透過 GitHub Actions 自動同步 Strava 資料（台灣時間 10:00 / 18:00 / 22:00）。
+> **目前這個 fork 使用 Strava 官方 Embed 顯示公開活動摘要，不需要 Strava API App、訂閱或 GitHub Secrets。**
+> 活動頁設定在 `strava.html`；原有 API 同步程式僅保留作為舊版參考，不會自動執行。
 
-🔗 **Live：** https://chenhan20.github.io/linkTree/linkTreeIndex.html
+> 太空主題個人入口網站，整合線上履歷與 Strava 公開活動摘要。
+> 部署於 GitHub Pages，活動內容由 Strava 官方 Embed 自動顯示。
+
+🔗 **Live：** https://n1025819.github.io/sport_martin/linkTreeIndex.html
 
 ---
 
