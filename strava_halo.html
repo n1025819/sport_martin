@@ -146,6 +146,16 @@ html,body{
   flex:1;min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;
   text-shadow:0 0 8px rgba(255,199,36,.45);
 }
+.sync-btn{
+  display:inline-flex;align-items:center;gap:6px;flex-shrink:0;
+  padding:8px 11px;border:1px solid rgba(255,199,36,.55);
+  background:rgba(255,199,36,.1);color:var(--gold-1);
+  font:700 10px/1 'Rajdhani',sans-serif;letter-spacing:1.5px;
+  text-decoration:none;text-transform:uppercase;transition:all .2s;
+  clip-path:polygon(5px 0,100% 0,100% calc(100% - 5px),calc(100% - 5px) 100%,0 100%,0 5px);
+}
+.sync-btn:hover{background:rgba(255,199,36,.22);box-shadow:0 0 14px rgba(255,199,36,.3)}
+.sync-btn-icon{font-size:14px;line-height:1}
 
 /* ── hero ── */
 .hero{
@@ -558,6 +568,8 @@ html,body{
 }
 @media(max-width:420px){
   .topbar-title{letter-spacing:1.8px;font-size:10px}
+  .sync-btn{padding:8px}
+  .sync-btn-text{display:none}
   .avatar{width:68px;height:68px}
   .hero{gap:1rem;padding:1.1rem 1rem}
   .activity-card{align-items:flex-start;gap:9px;padding:.75rem .85rem;margin-left:0}
@@ -722,6 +734,9 @@ html,body{
   <div class="topbar">
     <a class="back-btn" href="javascript:history.length>1?history.back():location.href='linkTreeIndex.html'">← BACK</a>
     <span class="topbar-title">UNSC · Spartan Telemetry · 117</span>
+    <a class="sync-btn" href="https://github.com/n1025819/sport_martin/actions/workflows/garmin-sync.yml" target="_blank" rel="noopener" title="開啟 GitHub Actions，按 Run workflow 立即同步 Garmin">
+      <span class="sync-btn-icon">↻</span><span class="sync-btn-text">強制同步</span>
+    </a>
   </div>
   <div id="content"><div class="loading">▸ ESTABLISHING UPLINK · COM/PA···</div></div>
 </div>
