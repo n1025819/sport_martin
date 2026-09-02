@@ -1,6 +1,6 @@
 {
   "source": "garmin_connect",
-  "updated_at": "2026-09-02T10:49:23.772220Z",
+  "updated_at": "2026-09-02T15:41:03.928636Z",
   "summary": {
     "ytd_distance_km": 1741.7,
     "ytd_elevation_m": 22207,
@@ -5424,6 +5424,23 @@
   ],
   "recent_weights": [
     {
+      "id": 24208726008,
+      "name": "重量訓練_胸",
+      "date": "2026-09-02",
+      "time": "18:40",
+      "moving_time_sec": 2539,
+      "moving_time_hr": 0.7,
+      "avg_heartrate": 100,
+      "max_heartrate": 132,
+      "calories_kcal": 259,
+      "description": null,
+      "source": "garmin_connect",
+      "source_activity_type": "strength_training",
+      "total_sets": 1,
+      "total_reps": 0,
+      "total_volume": null
+    },
+    {
       "id": 24196426794,
       "name": "肌力訓練",
       "date": "2026-09-01",
@@ -6922,6 +6939,23 @@
   ],
   "recent_hyrox": [
     {
+      "id": 24209728890,
+      "name": "Hyrox訓練",
+      "date": "2026-09-02",
+      "time": "19:45",
+      "moving_time_sec": 3624,
+      "moving_time_hr": 1.0,
+      "avg_heartrate": 96,
+      "max_heartrate": 138,
+      "calories_kcal": 332,
+      "description": null,
+      "source": "garmin_connect",
+      "source_activity_type": "strength_training",
+      "total_sets": 1,
+      "total_reps": 0,
+      "total_volume": null
+    },
+    {
       "id": 24196918676,
       "name": "Hyrox訓練",
       "date": "2026-09-01",
@@ -7286,10 +7320,10 @@
         "count": 0
       },
       "weight_training": {
-        "count": 1
+        "count": 2
       },
       "hyrox": {
-        "count": 1
+        "count": 2
       }
     }
   ],
@@ -7300,10 +7334,10 @@
     "run_hr": 0.0,
     "swim_m": 0,
     "swim_hr": 0.0,
-    "weight_count": 1,
-    "weight_hr": 0.4,
-    "hyrox_count": 1,
-    "hyrox_hr": 0.0
+    "weight_count": 2,
+    "weight_hr": 1.1,
+    "hyrox_count": 2,
+    "hyrox_hr": 1.0
   },
   "monthly_goals": {
     "ride": {
@@ -7322,14 +7356,14 @@
       "status": "danger"
     },
     "weight": {
-      "count": 1,
+      "count": 2,
       "target": 10,
       "status": "danger"
     },
     "hyrox": {
-      "count": 1,
+      "count": 2,
       "target": 4,
-      "status": "danger"
+      "status": "warning"
     }
   },
   "weekly_quest": {
@@ -7356,10 +7390,10 @@
     },
     "weight": {
       "done": true,
-      "count": 1,
+      "count": 2,
       "target": 1,
       "parts": {
-        "chest": false,
+        "chest": true,
         "back": false,
         "legs": false,
         "shoulders": false,
@@ -7368,7 +7402,7 @@
     },
     "hyrox": {
       "done": true,
-      "count": 1,
+      "count": 2,
       "target": 1
     }
   },
