@@ -2,7 +2,7 @@ name: Garmin Daily Sync
 
 on:
   schedule:
-    - cron: '20 3 * * *'  # 台灣 11:20
+    - cron: '0 1 * * *'   # 台灣 09:00
     - cron: '0 6 * * *'   # 台灣 14:00
     - cron: '0 12 * * *'  # 台灣 20:00
     - cron: '0 15 * * *'  # 台灣 23:00
