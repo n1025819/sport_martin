@@ -2,9 +2,10 @@ name: Garmin Daily Sync
 
 on:
   schedule:
-    - cron: '0 2 * * *'   # 台灣 10:00
-    - cron: '0 10 * * *'  # 台灣 18:00
-    - cron: '0 14 * * *'  # 台灣 22:00
+    - cron: '30 2 * * *'  # 台灣 10:30
+    - cron: '0 6 * * *'   # 台灣 14:00
+    - cron: '0 12 * * *'  # 台灣 20:00
+    - cron: '0 15 * * *'  # 台灣 23:00
   workflow_dispatch:
     inputs:
       fetch_all:

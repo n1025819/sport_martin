@@ -33,7 +33,7 @@ py -3.12 -m venv .venv-garmin
 4. 將 `data/garmin-tokens.enc` commit 並 push。
 5. 到 Actions → Garmin Daily Sync → Run workflow，第一次勾選「抓取全部 Garmin 歷史活動」。
 
-之後每天台灣時間 10:00、18:00、22:00 自動增量更新。請勿公開 `GARMIN_TOKEN_KEY`，也不要提交未加密的 `garmin_tokens.json`。
+之後每天台灣時間 10:30、14:00、20:00、23:00 自動增量更新。請勿公開 `GARMIN_TOKEN_KEY`，也不要提交未加密的 `garmin_tokens.json`。
 
 > 舊版 Strava API 程式仍保留作為歷史參考，但目前不會執行。
 
@@ -92,7 +92,7 @@ py -3.12 -m venv .venv-garmin
 - 月度里程長條圖
 - 活動紀錄：單車 / 跑步 / 游泳 / 重訓分頁
 - All Time 累計數據
-- 每天 10:00 / 18:00 / 22:00（台灣時間）自動更新
+- 每天 10:30 / 14:00 / 20:00 / 23:00（台灣時間）自動更新
 
 ---
 
@@ -177,7 +177,7 @@ Invoke-RestMethod -Method POST -Uri "https://www.strava.com/oauth/token" -Body $
 
 **GitHub repo → Actions → Strava Daily Sync → Run workflow**，勾選「全量抓取」後按 Run。
 
-> 首次跑完，`data/strava.json` 和 `data/itt-segments.json` 會被 commit 回 repo，之後每天台灣時間 10:00 / 18:00 / 22:00 自動增量更新。
+> 首次跑完，`data/strava.json` 和 `data/itt-segments.json` 會被 commit 回 repo，之後每天台灣時間 10:30 / 14:00 / 20:00 / 23:00 自動增量更新。
 
 ---
 
@@ -212,7 +212,7 @@ Invoke-RestMethod -Method POST -Uri "https://www.strava.com/oauth/token" -Body $
 > 想像 Strava 是「便利商店」、`strava.json` 是「冰箱裡的便當」、網頁是「飯桌」。
 
 ```
-台灣時間每天三次（10:00 / 18:00 / 22:00）
+台灣時間每天四次（10:30 / 14:00 / 20:00 / 23:00）
    ↓
 機器人（GitHub Actions）拿著鑰匙去 Strava 便利商店
    ↓
@@ -249,7 +249,7 @@ Invoke-RestMethod -Method POST -Uri "https://www.strava.com/oauth/token" -Body $
 
 ```mermaid
 flowchart TD
-  Cron(["⏰ 台灣 10:00 / 18:00 / 22:00<br/>UTC 02:00 / 10:00 / 14:00"]) --> Token
+  Cron(["⏰ 台灣 10:30 / 14:00 / 20:00 / 23:00<br/>UTC 02:30 / 06:00 / 12:00 / 15:00"]) --> Token
   Token["① POST /oauth/token<br/>refresh_token → access_token"] --> Stats
   Stats["② GET /athletes/{id}/stats<br/>YTD / All-time"] --> Acts
   Acts{"③ GET /athlete/activities<br/>FETCH_ALL=1?"}
