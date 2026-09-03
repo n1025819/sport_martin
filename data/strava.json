@@ -1,13 +1,13 @@
 {
   "source": "garmin_connect",
-  "updated_at": "2026-09-02T18:26:05.916950Z",
+  "updated_at": "2026-09-03T05:21:51.864225Z",
   "summary": {
     "ytd_distance_km": 1741.7,
     "ytd_elevation_m": 22207,
     "ytd_rides": 51,
     "ytd_moving_time_hr": 82.4,
-    "ytd_run_distance_km": 304.7,
-    "ytd_runs": 31,
+    "ytd_run_distance_km": 308.9,
+    "ytd_runs": 32,
     "ytd_swim_distance_km": 31.5,
     "ytd_swims": 15,
     "all_time_distance_km": 4293.4,
@@ -3601,6 +3601,27 @@
     }
   ],
   "recent_runs": [
+    {
+      "id": 24217215463,
+      "name": "跑步機",
+      "date": "2026-09-03",
+      "time": "08:11",
+      "moving_time_sec": 1229,
+      "moving_time_hr": 0.3,
+      "avg_heartrate": 142,
+      "max_heartrate": 160,
+      "calories_kcal": 298,
+      "description": null,
+      "source": "garmin_connect",
+      "source_activity_type": "treadmill_running",
+      "distance_km": 4.21,
+      "avg_speed_kmh": 11.7,
+      "polyline": null,
+      "elevation_m": 0,
+      "max_speed_kmh": 13.6,
+      "avg_pace_km": "5:07",
+      "avg_cadence_spm": 167
+    },
     {
       "id": 23290596071,
       "name": "內湖區 跑步",
@@ -7312,8 +7333,8 @@
         "count": 1
       },
       "run": {
-        "distance_km": 0,
-        "count": 0
+        "distance_km": 4.2,
+        "count": 1
       },
       "swim": {
         "distance_km": 0,
@@ -7330,8 +7351,8 @@
   "monthly_summary": {
     "ride_km": 29.5,
     "ride_hr": 1.6,
-    "run_km": 0,
-    "run_hr": 0.0,
+    "run_km": 4.2,
+    "run_hr": 0.3,
     "swim_m": 0,
     "swim_hr": 0.0,
     "weight_count": 2,
@@ -7346,7 +7367,7 @@
       "status": "danger"
     },
     "run": {
-      "count": 0,
+      "count": 1,
       "target": 4,
       "status": "danger"
     },
@@ -7376,8 +7397,8 @@
     },
     "run": {
       "done": false,
-      "distance_km": 0,
-      "moving_time_hr": 0.0,
+      "distance_km": 4.2,
+      "moving_time_hr": 0.3,
       "target_km": 10,
       "target_hr": 1
     },
