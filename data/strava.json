@@ -1,6 +1,6 @@
 {
   "source": "garmin_connect",
-  "updated_at": "2026-09-06T14:40:22.494035Z",
+  "updated_at": "2026-09-06T17:30:28.828877Z",
   "summary": {
     "ytd_distance_km": 1741.7,
     "ytd_elevation_m": 22207,
@@ -7423,16 +7423,16 @@
   },
   "weekly_quest": {
     "ride": {
-      "done": true,
-      "distance_km": 29.5,
-      "moving_time_hr": 1.6,
+      "done": false,
+      "distance_km": 0,
+      "moving_time_hr": 0.0,
       "target_km": 30,
       "target_hr": 1
     },
     "run": {
       "done": false,
-      "distance_km": 4.2,
-      "moving_time_hr": 0.3,
+      "distance_km": 0,
+      "moving_time_hr": 0.0,
       "target_km": 10,
       "target_hr": 1
     },
@@ -7444,11 +7444,11 @@
       "target_hr": 1
     },
     "weight": {
-      "done": true,
-      "count": 3,
+      "done": false,
+      "count": 0,
       "target": 1,
       "parts": {
-        "chest": true,
+        "chest": false,
         "back": false,
         "legs": false,
         "shoulders": false,
@@ -7456,8 +7456,8 @@
       }
     },
     "hyrox": {
-      "done": true,
-      "count": 3,
+      "done": false,
+      "count": 0,
       "target": 1
     }
   },
