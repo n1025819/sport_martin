@@ -1,13 +1,13 @@
 {
   "source": "garmin_connect",
-  "updated_at": "2026-09-06T17:30:28.828877Z",
+  "updated_at": "2026-09-07T05:27:17.974241Z",
   "summary": {
     "ytd_distance_km": 1741.7,
     "ytd_elevation_m": 22207,
     "ytd_rides": 51,
     "ytd_moving_time_hr": 82.4,
-    "ytd_run_distance_km": 308.9,
-    "ytd_runs": 32,
+    "ytd_run_distance_km": 315.9,
+    "ytd_runs": 33,
     "ytd_swim_distance_km": 31.5,
     "ytd_swims": 15,
     "all_time_distance_km": 4293.4,
@@ -3601,6 +3601,27 @@
     }
   ],
   "recent_runs": [
+    {
+      "id": 24265800133,
+      "name": "基礎訓練",
+      "date": "2026-09-07",
+      "time": "08:11",
+      "moving_time_sec": 2133,
+      "moving_time_hr": 0.6,
+      "avg_heartrate": 148,
+      "max_heartrate": 165,
+      "calories_kcal": 525,
+      "description": null,
+      "source": "garmin_connect",
+      "source_activity_type": "treadmill_running",
+      "distance_km": 7.04,
+      "avg_speed_kmh": 11.7,
+      "polyline": null,
+      "elevation_m": 0,
+      "max_speed_kmh": 12.9,
+      "avg_pace_km": "5:08",
+      "avg_cadence_spm": 167
+    },
     {
       "id": 24217215463,
       "name": "跑步機",
@@ -7367,8 +7388,8 @@
         "count": 1
       },
       "run": {
-        "distance_km": 4.2,
-        "count": 1
+        "distance_km": 11.2,
+        "count": 2
       },
       "swim": {
         "distance_km": 0,
@@ -7385,8 +7406,8 @@
   "monthly_summary": {
     "ride_km": 29.5,
     "ride_hr": 1.6,
-    "run_km": 4.2,
-    "run_hr": 0.3,
+    "run_km": 11.2,
+    "run_hr": 0.9,
     "swim_m": 0,
     "swim_hr": 0.0,
     "weight_count": 3,
@@ -7401,9 +7422,9 @@
       "status": "danger"
     },
     "run": {
-      "count": 1,
+      "count": 2,
       "target": 4,
-      "status": "danger"
+      "status": "warning"
     },
     "swim": {
       "count": 0,
@@ -7431,8 +7452,8 @@
     },
     "run": {
       "done": false,
-      "distance_km": 0,
-      "moving_time_hr": 0.0,
+      "distance_km": 7.0,
+      "moving_time_hr": 0.6,
       "target_km": 10,
       "target_hr": 1
     },
