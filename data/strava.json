@@ -1,20 +1,48 @@
 {
   "source": "garmin_connect",
-  "updated_at": "2026-09-12T05:16:19.699794Z",
+  "updated_at": "2026-09-12T10:14:55.325144Z",
   "summary": {
-    "ytd_distance_km": 1851.5,
+    "ytd_distance_km": 2028.8,
     "ytd_elevation_m": 22874,
-    "ytd_rides": 54,
-    "ytd_moving_time_hr": 86.8,
+    "ytd_rides": 55,
+    "ytd_moving_time_hr": 93.3,
     "ytd_run_distance_km": 315.9,
     "ytd_runs": 33,
     "ytd_swim_distance_km": 31.5,
     "ytd_swims": 15,
-    "all_time_distance_km": 4403.2,
-    "all_time_rides": 131,
+    "all_time_distance_km": 4580.5,
+    "all_time_rides": 132,
     "all_time_elevation_m": 47641
   },
   "recent_rides": [
+    {
+      "id": 24328653388,
+      "name": "室內自行車",
+      "date": "2026-09-12",
+      "time": "03:28",
+      "moving_time_sec": 23510,
+      "moving_time_hr": 6.5,
+      "avg_heartrate": 97,
+      "max_heartrate": 135,
+      "calories_kcal": 3187,
+      "description": null,
+      "source": "garmin_connect",
+      "source_activity_type": "indoor_cycling",
+      "distance_km": 177.31,
+      "avg_speed_kmh": 25.7,
+      "polyline": null,
+      "elevation_m": 0,
+      "avg_cadence_rpm": 75,
+      "avg_watts": 102,
+      "max_watts": 356,
+      "np_watts": 119,
+      "trainer": true,
+      "sport_type": "Ride",
+      "if_score": 0.5,
+      "tss": 163,
+      "top_laps": [],
+      "route_stream": []
+    },
     {
       "id": 24303518148,
       "name": "室內自行車",
@@ -7501,9 +7529,9 @@
     {
       "month": "2026-09",
       "ride": {
-        "distance_km": 139.3,
+        "distance_km": 316.6,
         "elevation_m": 1317,
-        "count": 4
+        "count": 5
       },
       "run": {
         "distance_km": 11.2,
@@ -7522,8 +7550,8 @@
     }
   ],
   "monthly_summary": {
-    "ride_km": 139.3,
-    "ride_hr": 6.1,
+    "ride_km": 316.6,
+    "ride_hr": 12.6,
     "run_km": 11.2,
     "run_hr": 0.9,
     "swim_m": 0,
@@ -7535,7 +7563,7 @@
   },
   "monthly_goals": {
     "ride": {
-      "count": 4,
+      "count": 5,
       "target": 4,
       "status": "done"
     },
@@ -7563,8 +7591,8 @@
   "weekly_quest": {
     "ride": {
       "done": true,
-      "distance_km": 109.8,
-      "moving_time_hr": 4.4,
+      "distance_km": 287.1,
+      "moving_time_hr": 11.0,
       "target_km": 30,
       "target_hr": 1
     },
