@@ -1,13 +1,13 @@
 {
   "source": "garmin_connect",
-  "updated_at": "2026-09-13T17:54:59.869844Z",
+  "updated_at": "2026-09-14T05:34:36.753176Z",
   "summary": {
     "ytd_distance_km": 2028.8,
     "ytd_elevation_m": 22874,
     "ytd_rides": 55,
     "ytd_moving_time_hr": 93.3,
-    "ytd_run_distance_km": 315.9,
-    "ytd_runs": 33,
+    "ytd_run_distance_km": 326.1,
+    "ytd_runs": 34,
     "ytd_swim_distance_km": 31.5,
     "ytd_swims": 15,
     "all_time_distance_km": 4580.5,
@@ -3713,6 +3713,27 @@
     }
   ],
   "recent_runs": [
+    {
+      "id": 24352175462,
+      "name": "跑步機",
+      "date": "2026-09-14",
+      "time": "07:47",
+      "moving_time_sec": 3051,
+      "moving_time_hr": 0.8,
+      "avg_heartrate": 156,
+      "max_heartrate": 169,
+      "calories_kcal": 793,
+      "description": null,
+      "source": "garmin_connect",
+      "source_activity_type": "treadmill_running",
+      "distance_km": 10.16,
+      "avg_speed_kmh": 11.9,
+      "polyline": null,
+      "elevation_m": 0,
+      "max_speed_kmh": 13.0,
+      "avg_pace_km": "5:03",
+      "avg_cadence_spm": 169
+    },
     {
       "id": 24265800133,
       "name": "基礎訓練",
@@ -7534,8 +7555,8 @@
         "count": 5
       },
       "run": {
-        "distance_km": 11.2,
-        "count": 2
+        "distance_km": 21.4,
+        "count": 3
       },
       "swim": {
         "distance_km": 0,
@@ -7552,8 +7573,8 @@
   "monthly_summary": {
     "ride_km": 316.6,
     "ride_hr": 12.6,
-    "run_km": 11.2,
-    "run_hr": 0.9,
+    "run_km": 21.4,
+    "run_hr": 1.8,
     "swim_m": 0,
     "swim_hr": 0.0,
     "weight_count": 4,
@@ -7568,7 +7589,7 @@
       "status": "done"
     },
     "run": {
-      "count": 2,
+      "count": 3,
       "target": 4,
       "status": "warning"
     },
@@ -7597,9 +7618,9 @@
       "target_hr": 1
     },
     "run": {
-      "done": false,
-      "distance_km": 0,
-      "moving_time_hr": 0.0,
+      "done": true,
+      "distance_km": 10.2,
+      "moving_time_hr": 0.8,
       "target_km": 10,
       "target_hr": 1
     },
