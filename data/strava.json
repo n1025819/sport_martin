@@ -1,6 +1,6 @@
 {
   "source": "garmin_connect",
-  "updated_at": "2026-09-23T10:57:17.228406Z",
+  "updated_at": "2026-09-23T15:49:53.605860Z",
   "summary": {
     "ytd_distance_km": 2303.1,
     "ytd_elevation_m": 25391,
@@ -7450,6 +7450,23 @@
   ],
   "recent_hyrox": [
     {
+      "id": 24469017226,
+      "name": "Hyrox訓練",
+      "date": "2026-09-23",
+      "time": "19:28",
+      "moving_time_sec": 3829,
+      "moving_time_hr": 1.1,
+      "avg_heartrate": 105,
+      "max_heartrate": 165,
+      "calories_kcal": 426,
+      "description": null,
+      "source": "garmin_connect",
+      "source_activity_type": "strength_training",
+      "total_sets": 1,
+      "total_reps": 0,
+      "total_volume": null
+    },
+    {
       "id": 24442734288,
       "name": "Hyrox訓練",
       "date": "2026-09-21",
@@ -7902,7 +7919,7 @@
         "count": 9
       },
       "hyrox": {
-        "count": 6
+        "count": 7
       }
     }
   ],
@@ -7915,8 +7932,8 @@
     "swim_hr": 0.0,
     "weight_count": 9,
     "weight_hr": 5.5,
-    "hyrox_count": 6,
-    "hyrox_hr": 6.1
+    "hyrox_count": 7,
+    "hyrox_hr": 7.2
   },
   "monthly_goals": {
     "ride": {
@@ -7940,7 +7957,7 @@
       "status": "warning"
     },
     "hyrox": {
-      "count": 6,
+      "count": 7,
       "target": 4,
       "status": "over"
     }
@@ -7981,7 +7998,7 @@
     },
     "hyrox": {
       "done": true,
-      "count": 1,
+      "count": 2,
       "target": 1
     }
   },
