@@ -1,6 +1,6 @@
 {
   "source": "garmin_connect",
-  "updated_at": "2026-10-07T06:42:07.721672Z",
+  "updated_at": "2026-10-07T12:49:23.367656Z",
   "summary": {
     "ytd_distance_km": 2685.0,
     "ytd_elevation_m": 26677,
@@ -5928,6 +5928,23 @@
   ],
   "recent_weights": [
     {
+      "id": 24638163258,
+      "name": "重量訓練_胸",
+      "date": "2026-10-07",
+      "time": "18:09",
+      "moving_time_sec": 2914,
+      "moving_time_hr": 0.8,
+      "avg_heartrate": 101,
+      "max_heartrate": 164,
+      "calories_kcal": 394,
+      "description": null,
+      "source": "garmin_connect",
+      "source_activity_type": "strength_training",
+      "total_sets": 17,
+      "total_reps": 172,
+      "total_volume": null
+    },
+    {
       "id": 24633993146,
       "name": "肌力訓練",
       "date": "2026-10-06",
@@ -8118,7 +8135,7 @@
         "count": 0
       },
       "weight_training": {
-        "count": 2
+        "count": 3
       },
       "hyrox": {
         "count": 0
@@ -8132,8 +8149,8 @@
     "run_hr": 0.0,
     "swim_m": 0,
     "swim_hr": 0.0,
-    "weight_count": 2,
-    "weight_hr": 1.7,
+    "weight_count": 3,
+    "weight_hr": 2.5,
     "hyrox_count": 0,
     "hyrox_hr": 0.0
   },
@@ -8154,7 +8171,7 @@
       "status": "danger"
     },
     "weight": {
-      "count": 2,
+      "count": 3,
       "target": 10,
       "status": "danger"
     },
@@ -8188,10 +8205,10 @@
     },
     "weight": {
       "done": true,
-      "count": 1,
+      "count": 2,
       "target": 1,
       "parts": {
-        "chest": false,
+        "chest": true,
         "back": false,
         "legs": false,
         "shoulders": false,
