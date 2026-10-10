@@ -1,6 +1,6 @@
 {
   "source": "garmin_connect",
-  "updated_at": "2026-10-09T19:59:38.000932Z",
+  "updated_at": "2026-10-10T06:32:45.519164Z",
   "summary": {
     "ytd_distance_km": 2685.0,
     "ytd_elevation_m": 26677,
@@ -8,8 +8,8 @@
     "ytd_moving_time_hr": 119.1,
     "ytd_run_distance_km": 347.4,
     "ytd_runs": 35,
-    "ytd_swim_distance_km": 31.5,
-    "ytd_swims": 15,
+    "ytd_swim_distance_km": 31.9,
+    "ytd_swims": 16,
     "all_time_distance_km": 5236.7,
     "all_time_rides": 143,
     "all_time_elevation_m": 51444
@@ -5242,6 +5242,24 @@
   ],
   "recent_swims": [
     {
+      "id": 24669026275,
+      "name": "安平區 開放水域游泳",
+      "date": "2026-10-10",
+      "time": "10:30",
+      "moving_time_sec": 811,
+      "moving_time_hr": 0.2,
+      "avg_heartrate": 85,
+      "max_heartrate": 123,
+      "calories_kcal": 173,
+      "description": null,
+      "source": "garmin_connect",
+      "source_activity_type": "open_water_swimming",
+      "distance_km": 0.47,
+      "avg_speed_kmh": 0.8,
+      "polyline": null,
+      "pace_per_100m": "7:41"
+    },
+    {
       "id": 23517142140,
       "name": "泳池游泳",
       "date": "2026-07-08",
@@ -8165,8 +8183,8 @@
         "count": 0
       },
       "swim": {
-        "distance_km": 0,
-        "count": 0
+        "distance_km": 0.5,
+        "count": 1
       },
       "weight_training": {
         "count": 4
@@ -8181,8 +8199,8 @@
     "ride_hr": 10.2,
     "run_km": 0,
     "run_hr": 0.0,
-    "swim_m": 0,
-    "swim_hr": 0.0,
+    "swim_m": 500,
+    "swim_hr": 0.2,
     "weight_count": 4,
     "weight_hr": 3.0,
     "hyrox_count": 1,
@@ -8200,7 +8218,7 @@
       "status": "danger"
     },
     "swim": {
-      "count": 0,
+      "count": 1,
       "target": 4,
       "status": "danger"
     },
@@ -8232,8 +8250,8 @@
     },
     "swim": {
       "done": false,
-      "distance_m": 0,
-      "moving_time_hr": 0.0,
+      "distance_m": 500,
+      "moving_time_hr": 0.2,
       "target_m": 1000,
       "target_hr": 1
     },
