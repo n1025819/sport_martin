@@ -1,6 +1,6 @@
 {
   "source": "garmin_connect",
-  "updated_at": "2026-10-10T06:32:45.519164Z",
+  "updated_at": "2026-10-10T12:03:00.292115Z",
   "summary": {
     "ytd_distance_km": 2685.0,
     "ytd_elevation_m": 26677,
@@ -8,8 +8,8 @@
     "ytd_moving_time_hr": 119.1,
     "ytd_run_distance_km": 347.4,
     "ytd_runs": 35,
-    "ytd_swim_distance_km": 31.9,
-    "ytd_swims": 16,
+    "ytd_swim_distance_km": 32.4,
+    "ytd_swims": 17,
     "all_time_distance_km": 5236.7,
     "all_time_rides": 143,
     "all_time_elevation_m": 51444
@@ -5242,6 +5242,24 @@
   ],
   "recent_swims": [
     {
+      "id": 24671099555,
+      "name": "仁德區 開放水域游泳",
+      "date": "2026-10-10",
+      "time": "16:04",
+      "moving_time_sec": 609,
+      "moving_time_hr": 0.2,
+      "avg_heartrate": 85,
+      "max_heartrate": 119,
+      "calories_kcal": 212,
+      "description": null,
+      "source": "garmin_connect",
+      "source_activity_type": "open_water_swimming",
+      "distance_km": 0.5,
+      "avg_speed_kmh": 0.7,
+      "polyline": null,
+      "pace_per_100m": "8:58"
+    },
+    {
       "id": 24669026275,
       "name": "安平區 開放水域游泳",
       "date": "2026-10-10",
@@ -8183,8 +8201,8 @@
         "count": 0
       },
       "swim": {
-        "distance_km": 0.5,
-        "count": 1
+        "distance_km": 1.0,
+        "count": 2
       },
       "weight_training": {
         "count": 4
@@ -8199,8 +8217,8 @@
     "ride_hr": 10.2,
     "run_km": 0,
     "run_hr": 0.0,
-    "swim_m": 500,
-    "swim_hr": 0.2,
+    "swim_m": 1000,
+    "swim_hr": 0.4,
     "weight_count": 4,
     "weight_hr": 3.0,
     "hyrox_count": 1,
@@ -8218,9 +8236,9 @@
       "status": "danger"
     },
     "swim": {
-      "count": 1,
+      "count": 2,
       "target": 4,
-      "status": "danger"
+      "status": "warning"
     },
     "weight": {
       "count": 4,
@@ -8249,9 +8267,9 @@
       "target_hr": 1
     },
     "swim": {
-      "done": false,
-      "distance_m": 500,
-      "moving_time_hr": 0.2,
+      "done": true,
+      "distance_m": 1000,
+      "moving_time_hr": 0.4,
       "target_m": 1000,
       "target_hr": 1
     },
