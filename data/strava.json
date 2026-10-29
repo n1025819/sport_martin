@@ -1,20 +1,48 @@
 {
   "source": "garmin_connect",
-  "updated_at": "2026-10-29T12:26:52.972113Z",
+  "updated_at": "2026-10-29T17:49:10.458190Z",
   "summary": {
-    "ytd_distance_km": 2889.7,
-    "ytd_elevation_m": 27984,
-    "ytd_rides": 70,
-    "ytd_moving_time_hr": 127.2,
+    "ytd_distance_km": 2969.4,
+    "ytd_elevation_m": 28186,
+    "ytd_rides": 71,
+    "ytd_moving_time_hr": 130.3,
     "ytd_run_distance_km": 347.4,
     "ytd_runs": 35,
     "ytd_swim_distance_km": 32.4,
     "ytd_swims": 17,
-    "all_time_distance_km": 5441.4,
-    "all_time_rides": 147,
-    "all_time_elevation_m": 52751
+    "all_time_distance_km": 5521.2,
+    "all_time_rides": 148,
+    "all_time_elevation_m": 52953
   },
   "recent_rides": [
+    {
+      "id": 24893337492,
+      "name": "內湖區 公路車",
+      "date": "2026-10-29",
+      "time": "17:26",
+      "moving_time_sec": 10978,
+      "moving_time_hr": 3.0,
+      "avg_heartrate": 92,
+      "max_heartrate": 133,
+      "calories_kcal": 1511,
+      "description": null,
+      "source": "garmin_connect",
+      "source_activity_type": "road_biking",
+      "distance_km": 79.74,
+      "avg_speed_kmh": 23.5,
+      "polyline": null,
+      "elevation_m": 202,
+      "avg_cadence_rpm": 76,
+      "avg_watts": 106,
+      "max_watts": 776,
+      "np_watts": 161,
+      "trainer": false,
+      "sport_type": "Ride",
+      "if_score": 0.676,
+      "tss": 140,
+      "top_laps": [],
+      "route_stream": []
+    },
     {
       "id": 24876380503,
       "name": "內湖區 公路車",
@@ -6076,6 +6104,23 @@
   ],
   "recent_weights": [
     {
+      "id": 24894217301,
+      "name": "重量訓練_胸",
+      "date": "2026-10-29",
+      "time": "08:09",
+      "moving_time_sec": 2665,
+      "moving_time_hr": 0.7,
+      "avg_heartrate": 79,
+      "max_heartrate": 129,
+      "calories_kcal": 163,
+      "description": null,
+      "source": "garmin_connect",
+      "source_activity_type": "strength_training",
+      "total_sets": 1,
+      "total_reps": 0,
+      "total_volume": null
+    },
+    {
       "id": 24802345728,
       "name": "肌力訓練",
       "date": "2026-10-21",
@@ -8406,9 +8451,9 @@
     {
       "month": "2026-10",
       "ride": {
-        "distance_km": 476.2,
-        "elevation_m": 2234,
-        "count": 6
+        "distance_km": 556.0,
+        "elevation_m": 2436,
+        "count": 7
       },
       "run": {
         "distance_km": 0,
@@ -8419,7 +8464,7 @@
         "count": 2
       },
       "weight_training": {
-        "count": 8
+        "count": 9
       },
       "hyrox": {
         "count": 3
@@ -8427,20 +8472,20 @@
     }
   ],
   "monthly_summary": {
-    "ride_km": 476.2,
-    "ride_hr": 18.2,
+    "ride_km": 556.0,
+    "ride_hr": 21.3,
     "run_km": 0,
     "run_hr": 0.0,
     "swim_m": 1000,
     "swim_hr": 0.4,
-    "weight_count": 8,
-    "weight_hr": 6.5,
+    "weight_count": 9,
+    "weight_hr": 7.2,
     "hyrox_count": 3,
     "hyrox_hr": 2.9
   },
   "monthly_goals": {
     "ride": {
-      "count": 6,
+      "count": 7,
       "target": 4,
       "status": "over"
     },
@@ -8455,7 +8500,7 @@
       "status": "warning"
     },
     "weight": {
-      "count": 8,
+      "count": 9,
       "target": 10,
       "status": "warning"
     },
@@ -8468,8 +8513,8 @@
   "weekly_quest": {
     "ride": {
       "done": true,
-      "distance_km": 47.0,
-      "moving_time_hr": 1.7,
+      "distance_km": 126.8,
+      "moving_time_hr": 4.8,
       "target_km": 30,
       "target_hr": 1
     },
@@ -8488,11 +8533,11 @@
       "target_hr": 1
     },
     "weight": {
-      "done": false,
-      "count": 0,
+      "done": true,
+      "count": 1,
       "target": 1,
       "parts": {
-        "chest": false,
+        "chest": true,
         "back": false,
         "legs": false,
         "shoulders": false,
