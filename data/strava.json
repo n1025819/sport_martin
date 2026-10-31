@@ -1,6 +1,6 @@
 {
   "source": "garmin_connect",
-  "updated_at": "2026-10-31T11:49:39.568770Z",
+  "updated_at": "2026-10-31T16:34:27.610720Z",
   "summary": {
     "ytd_distance_km": 2969.4,
     "ytd_elevation_m": 28186,
@@ -8489,22 +8489,22 @@
     }
   ],
   "monthly_summary": {
-    "ride_km": 556.0,
-    "ride_hr": 21.3,
+    "ride_km": 0,
+    "ride_hr": 0.0,
     "run_km": 0,
     "run_hr": 0.0,
-    "swim_m": 1000,
-    "swim_hr": 0.4,
-    "weight_count": 10,
-    "weight_hr": 8.1,
-    "hyrox_count": 3,
-    "hyrox_hr": 2.9
+    "swim_m": 0,
+    "swim_hr": 0.0,
+    "weight_count": 0,
+    "weight_hr": 0.0,
+    "hyrox_count": 0,
+    "hyrox_hr": 0.0
   },
   "monthly_goals": {
     "ride": {
-      "count": 7,
+      "count": 0,
       "target": 4,
-      "status": "over"
+      "status": "danger"
     },
     "run": {
       "count": 0,
@@ -8512,19 +8512,19 @@
       "status": "danger"
     },
     "swim": {
-      "count": 2,
+      "count": 0,
       "target": 4,
-      "status": "warning"
+      "status": "danger"
     },
     "weight": {
-      "count": 10,
+      "count": 0,
       "target": 10,
-      "status": "done"
+      "status": "danger"
     },
     "hyrox": {
-      "count": 3,
+      "count": 0,
       "target": 4,
-      "status": "warning"
+      "status": "danger"
     }
   },
   "weekly_quest": {
