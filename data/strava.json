@@ -1,20 +1,48 @@
 {
   "source": "garmin_connect",
-  "updated_at": "2026-11-07T19:15:19.441330Z",
+  "updated_at": "2026-11-08T06:49:28.348782Z",
   "summary": {
-    "ytd_distance_km": 2969.4,
-    "ytd_elevation_m": 28186,
-    "ytd_rides": 71,
-    "ytd_moving_time_hr": 130.3,
+    "ytd_distance_km": 3558.5,
+    "ytd_elevation_m": 30143,
+    "ytd_rides": 72,
+    "ytd_moving_time_hr": 151.5,
     "ytd_run_distance_km": 347.4,
     "ytd_runs": 35,
     "ytd_swim_distance_km": 32.4,
     "ytd_swims": 17,
-    "all_time_distance_km": 5521.2,
-    "all_time_rides": 148,
-    "all_time_elevation_m": 52953
+    "all_time_distance_km": 6110.2,
+    "all_time_rides": 149,
+    "all_time_elevation_m": 54910
   },
   "recent_rides": [
+    {
+      "id": 25001696981,
+      "name": "貢寮區 公路車",
+      "date": "2026-11-06",
+      "time": "18:15",
+      "moving_time_sec": 76550,
+      "moving_time_hr": 21.3,
+      "avg_heartrate": 98,
+      "max_heartrate": 153,
+      "calories_kcal": 12538,
+      "description": null,
+      "source": "garmin_connect",
+      "source_activity_type": "road_biking",
+      "distance_km": 589.06,
+      "avg_speed_kmh": 27.5,
+      "polyline": null,
+      "elevation_m": 1957,
+      "avg_cadence_rpm": 79,
+      "avg_watts": 137,
+      "max_watts": 801,
+      "np_watts": 158,
+      "trainer": false,
+      "sport_type": "Ride",
+      "if_score": 0.664,
+      "tss": 937,
+      "top_laps": [],
+      "route_stream": []
+    },
     {
       "id": 24893337492,
       "name": "內湖區 公路車",
@@ -8558,9 +8586,9 @@
     {
       "month": "2026-11",
       "ride": {
-        "distance_km": 0,
-        "elevation_m": 0,
-        "count": 0
+        "distance_km": 589.1,
+        "elevation_m": 1957,
+        "count": 1
       },
       "run": {
         "distance_km": 0,
@@ -8579,8 +8607,8 @@
     }
   ],
   "monthly_summary": {
-    "ride_km": 0,
-    "ride_hr": 0.0,
+    "ride_km": 589.1,
+    "ride_hr": 21.3,
     "run_km": 0,
     "run_hr": 0.0,
     "swim_m": 0,
@@ -8592,7 +8620,7 @@
   },
   "monthly_goals": {
     "ride": {
-      "count": 0,
+      "count": 1,
       "target": 4,
       "status": "danger"
     },
@@ -8619,9 +8647,9 @@
   },
   "weekly_quest": {
     "ride": {
-      "done": false,
-      "distance_km": 0,
-      "moving_time_hr": 0.0,
+      "done": true,
+      "distance_km": 589.1,
+      "moving_time_hr": 21.3,
       "target_km": 30,
       "target_hr": 1
     },
