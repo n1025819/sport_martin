@@ -1,6 +1,6 @@
 {
   "source": "garmin_connect",
-  "updated_at": "2026-11-15T13:35:37.389725Z",
+  "updated_at": "2026-11-15T18:16:59.402968Z",
   "summary": {
     "ytd_distance_km": 3558.5,
     "ytd_elevation_m": 30143,
@@ -8736,11 +8736,11 @@
       "target_hr": 1
     },
     "weight": {
-      "done": true,
-      "count": 3,
+      "done": false,
+      "count": 0,
       "target": 1,
       "parts": {
-        "chest": true,
+        "chest": false,
         "back": false,
         "legs": false,
         "shoulders": false,
@@ -8748,8 +8748,8 @@
       }
     },
     "hyrox": {
-      "done": true,
-      "count": 1,
+      "done": false,
+      "count": 0,
       "target": 1
     }
   },
