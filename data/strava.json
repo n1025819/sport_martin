@@ -1,13 +1,13 @@
 {
   "source": "garmin_connect",
-  "updated_at": "2026-11-23T23:06:32.012532Z",
+  "updated_at": "2026-11-24T01:59:48.603283Z",
   "summary": {
     "ytd_distance_km": 3618.9,
     "ytd_elevation_m": 31514,
     "ytd_rides": 74,
     "ytd_moving_time_hr": 155.0,
-    "ytd_run_distance_km": 347.4,
-    "ytd_runs": 35,
+    "ytd_run_distance_km": 353.6,
+    "ytd_runs": 36,
     "ytd_swim_distance_km": 32.4,
     "ytd_swims": 17,
     "all_time_distance_km": 6170.6,
@@ -4245,6 +4245,27 @@
     }
   ],
   "recent_runs": [
+    {
+      "id": 25178930258,
+      "name": "跑步機",
+      "date": "2026-11-24",
+      "time": "07:57",
+      "moving_time_sec": 1804,
+      "moving_time_hr": 0.5,
+      "avg_heartrate": 143,
+      "max_heartrate": 164,
+      "calories_kcal": 448,
+      "description": null,
+      "source": "garmin_connect",
+      "source_activity_type": "treadmill_running",
+      "distance_km": 6.15,
+      "avg_speed_kmh": 11.9,
+      "polyline": null,
+      "elevation_m": 0,
+      "max_speed_kmh": 13.2,
+      "avg_pace_km": "5:04",
+      "avg_cadence_spm": 167
+    },
     {
       "id": 24425636896,
       "name": "中山區 - 恢復",
@@ -8749,8 +8770,8 @@
         "count": 3
       },
       "run": {
-        "distance_km": 0,
-        "count": 0
+        "distance_km": 6.2,
+        "count": 1
       },
       "swim": {
         "distance_km": 0,
@@ -8767,8 +8788,8 @@
   "monthly_summary": {
     "ride_km": 649.5,
     "ride_hr": 24.7,
-    "run_km": 0,
-    "run_hr": 0.0,
+    "run_km": 6.2,
+    "run_hr": 0.5,
     "swim_m": 0,
     "swim_hr": 0.0,
     "weight_count": 6,
@@ -8783,7 +8804,7 @@
       "status": "warning"
     },
     "run": {
-      "count": 0,
+      "count": 1,
       "target": 4,
       "status": "danger"
     },
@@ -8813,8 +8834,8 @@
     },
     "run": {
       "done": false,
-      "distance_km": 0,
-      "moving_time_hr": 0.0,
+      "distance_km": 6.2,
+      "moving_time_hr": 0.5,
       "target_km": 10,
       "target_hr": 1
     },
